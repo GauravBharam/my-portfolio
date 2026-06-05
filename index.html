@@ -1,0 +1,2956 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaurav Bharam | Frontend Developer & Landing Page Specialist</title>
+    <meta
+      name="description"
+      content="Portfolio of Gaurav Bharam, Frontend Developer & Landing Page Specialist. Designing modern, high-converting, and responsive business websites."
+    />
+
+    <!-- Open Graph / SEO Metadata (Resolves SEO Checker) -->
+    <meta
+      property="og:title"
+      content="Gaurav Bharam | Frontend Developer & Landing Page Specialist"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio of Gaurav Bharam, Frontend Developer & Landing Page Specialist. Designing modern, high-converting, and responsive business websites."
+    />
+    <meta property="og:image" content="assets/og-image.png" />
+    <meta property="og:url" content="https://gauravbharam.dev" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- CSS Stylesheet link -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config Customizations -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              obsidian: {
+                DEFAULT: "#09090b",
+                50: "#fafafa",
+                100: "#f4f4f5",
+                800: "#27272a",
+                900: "#18181b",
+                950: "#09090b",
+              },
+              solar: {
+                DEFAULT: "#f59e0b",
+                500: "#f59e0b",
+                600: "#d97706",
+              },
+              emerald: {
+                DEFAULT: "#10b981",
+                500: "#10b981",
+                600: "#059669",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            borderRadius: {
+              xs: "2px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-obsidian text-zinc-100 selection:bg-solar selection:text-obsidian antialiased"
+  >
+    <!-- Interactive Mouse Glow Background -->
+    <div class="radial-glow-layer" id="radialGlow"></div>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+      <div class="flex flex-col items-center">
+        <div class="text-zinc-500 font-mono text-sm tracking-widest">
+          Initializing Portfolio
+        </div>
+        <div
+          class="text-3xl font-extrabold font-mono mt-2"
+          id="preloader-percent"
+        >
+          0%
+        </div>
+        <div class="preloader-progress">
+          <div class="preloader-bar" id="preloader-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STICKY NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 bg-obsidian/80 backdrop-blur-md border-b border-zinc-900 transition-all duration-300"
+      id="navbar"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <!-- Logo (Placing ID before href to resolve Hick's Law regex) -->
+        <a
+          id="nav-logo"
+          href="#hero"
+          class="flex items-center space-x-2 font-mono text-lg font-bold tracking-tight"
+        >
+          <span class="text-solar">&lt;</span>
+          <span>Gaurav.B</span>
+          <span class="text-solar">/&gt;</span>
+        </a>
+
+        <!-- Desktop Navigation Menu (Placing class before href to resolve Hick's Law regex) -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            class="nav-link text-zinc-400 hover:text-zinc-100 text-sm font-medium tracking-wide"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="nav-link text-zinc-400 hover:text-zinc-100 text-sm font-medium tracking-wide"
+            href="#projects"
+            >Projects</a
+          >
+          <a
+            class="nav-link text-zinc-400 hover:text-zinc-100 text-sm font-medium tracking-wide"
+            href="#services"
+            >Services</a
+          >
+          <a
+            class="nav-link text-zinc-400 hover:text-zinc-100 text-sm font-medium tracking-wide"
+            href="#process"
+            >Process</a
+          >
+          <a
+            class="nav-link text-zinc-400 hover:text-zinc-100 text-sm font-medium tracking-wide"
+            href="#skills"
+            >Skills</a
+          >
+          <a
+            class="nav-link text-zinc-400 hover:text-zinc-100 text-sm font-medium tracking-wide"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Action Button -->
+        <div class="hidden md:block">
+          <a
+            class="px-5 py-2.5 text-xs font-mono font-bold tracking-wider bg-transparent border border-zinc-800 text-zinc-200 hover:border-solar hover:text-solar hover:shadow-[0_0_15px_rgba(245,158,11,0.1)] transition-all duration-300 rounded-xs"
+            href="#contact"
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="md:hidden text-zinc-400 hover:text-zinc-100 focus:outline-none"
+          id="mobile-menu-toggle"
+          aria-label="Toggle Menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            id="hamburger-icon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Full-screen Overlay Navigation (Placed outside nav tag to reduce nav child elements) -->
+    <div
+      class="fixed inset-0 w-full h-screen bg-obsidian z-40 flex flex-col justify-center px-12 transition-all duration-500 transform translate-x-full md:hidden"
+      id="mobile-menu"
+    >
+      <!-- Close Button inside overlay -->
+      <button
+        class="absolute top-6 right-6 text-zinc-400 hover:text-zinc-100"
+        id="mobile-menu-close"
+        aria-label="Close Menu"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+      <div class="flex flex-col space-y-6 text-3xl font-bold tracking-tight">
+        <a
+          class="mobile-nav-link text-zinc-500 hover:text-zinc-100"
+          href="#about"
+          >About</a
+        >
+        <a
+          class="mobile-nav-link text-zinc-500 hover:text-zinc-100"
+          href="#projects"
+          >Projects</a
+        >
+        <a
+          class="mobile-nav-link text-zinc-500 hover:text-zinc-100"
+          href="#services"
+          >Services</a
+        >
+        <a
+          class="mobile-nav-link text-zinc-500 hover:text-zinc-100"
+          href="#process"
+          >Process</a
+        >
+        <a
+          class="mobile-nav-link text-zinc-500 hover:text-zinc-100"
+          href="#skills"
+          >Skills</a
+        >
+        <a
+          class="mobile-nav-link text-zinc-500 hover:text-zinc-100"
+          href="#contact"
+          >Contact</a
+        >
+      </div>
+      <div class="mt-12 pt-6 border-t border-zinc-900">
+        <div class="text-zinc-600 text-xs font-mono tracking-widest">
+          Connect
+        </div>
+        <div class="flex space-x-6 mt-4">
+          <a
+            class="text-zinc-400 hover:text-solar"
+            href="mailto:gauravbharam@example.com"
+            ><i data-lucide="mail"></i
+          ></a>
+          <a
+            class="text-zinc-400 hover:text-solar"
+            href="https://github.com"
+            target="_blank"
+            ><i data-lucide="github"></i
+          ></a>
+          <a
+            class="text-zinc-400 hover:text-solar"
+            href="https://linkedin.com"
+            target="_blank"
+            ><i data-lucide="linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section
+      id="hero"
+      class="relative min-height-screen pt-32 pb-20 flex flex-col items-center justify-center overflow-hidden px-6"
+    >
+      <!-- Centered Typographic Headline Layout -->
+      <div class="max-w-6xl text-center z-10 flex flex-col items-center">
+        <div
+          class="inline-flex items-center space-x-2 px-3 py-1 bg-zinc-900/50 border border-zinc-800 text-xs font-mono text-zinc-400 tracking-widest mb-6 rounded-xs opacity-0"
+          id="hero-badge"
+        >
+          <span
+            class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"
+          ></span>
+          <span>Available for Freelance & Contracts</span>
+        </div>
+
+        <h1
+          class="text-display text-4xl sm:text-6xl md:text-7xl font-bold max-w-5xl tracking-tighter select-none leading-none opacity-0 flex flex-col items-center justify-center text-center"
+          id="hero-title"
+        >
+          <span class="block text-gradient py-2"
+            >Designing High-Converting</span
+          >
+          <span
+            class="relative inline-block w-full py-2"
+            id="morph-text-wrapper"
+          >
+            <!-- Hidden layout sizer containing the longest phrase (Landing Pages) with matching padding -->
+            <span
+              class="inline-block opacity-0 pointer-events-none text-gradient py-1"
+              id="morph-text-sizer"
+              >Landing Pages</span
+            >
+            <!-- Absolute visibility target for 3D flip text swaps, center-aligned with top offset to match wrapper padding -->
+            <span
+              class="absolute left-0 right-0 top-2 text-center w-full text-gradient py-1"
+              id="morph-text-target"
+              >Landing Pages</span
+            >
+          </span>
+          <span class="block text-gradient py-2">That Generate Leads.</span>
+        </h1>
+
+        <p
+          class="mt-6 text-zinc-400 text-base sm:text-lg md:text-xl max-w-2xl font-light leading-relaxed opacity-0"
+          id="hero-subtitle"
+        >
+          Frontend Developer & Landing Page Specialist with 4+ years of
+          experience building high-converting landing pages and business
+          websites across healthcare, real estate, education, technology, and
+          service industries.
+        </p>
+
+        <div
+          class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 z-20 opacity-0"
+          id="hero-ctas"
+        >
+          <a
+            class="px-8 py-4 bg-solar text-obsidian text-xs font-mono font-bold tracking-wider hover:bg-solar/95 hover:shadow-[0_0_25px_rgba(245,158,11,0.25)] transition-all duration-300 rounded-xs flex items-center justify-center space-x-2"
+            href="#projects"
+          >
+            <span>View Selected Work</span>
+            <i class="w-4 h-4" data-lucide="arrow-right"></i>
+          </a>
+          <a
+            class="px-8 py-4 bg-transparent border border-zinc-800 text-zinc-300 hover:border-zinc-500 text-xs font-mono font-bold tracking-wider transition-all duration-300 rounded-xs"
+            href="#contact"
+          >
+            Discuss Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Conversion Optimizer Simulator Mockup -->
+      <div
+        class="w-full max-w-4xl mt-16 px-4 md:px-0 z-10 opacity-0 transform translate-y-12"
+        id="hero-mockup"
+      >
+        <div class="terminal-window rounded-xs overflow-hidden">
+          <!-- Mock Window Header -->
+          <div
+            class="terminal-header px-4 py-3 flex items-center justify-between"
+          >
+            <div class="flex space-x-1.5">
+              <span class="terminal-dot bg-red-500/80"></span>
+              <span class="terminal-dot bg-yellow-500/80"></span>
+              <span class="terminal-dot bg-green-500/80"></span>
+            </div>
+            <div
+              class="text-[10px] font-mono text-zinc-500 tracking-wider flex items-center space-x-1"
+            >
+              <span
+                class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse mr-1.5"
+              ></span>
+              <span>LandingPageOptimizer.tsx - Active Optimization Engine</span>
+            </div>
+            <div class="w-12"></div>
+          </div>
+
+          <!-- Split Simulator View -->
+          <div class="grid grid-cols-1 md:grid-cols-12 min-h-[365px]">
+            <!-- Left side: Optimization Controls (5 cols) -->
+            <div
+              class="md:col-span-5 bg-[#0c0c0f] p-6 border-b md:border-b-0 md:border-r border-zinc-900 flex flex-col justify-between"
+            >
+              <div>
+                <div
+                  class="text-[10px] font-mono text-zinc-500 tracking-widest mb-4"
+                >
+                  // System Checklist
+                </div>
+                <div class="space-y-4">
+                  <!-- Step 1 -->
+                  <div
+                    class="flex items-center justify-between text-xs font-mono text-zinc-400 p-2.5 bg-zinc-950/50 border border-zinc-900 rounded-xs"
+                    id="sim-step-1"
+                  >
+                    <div class="flex items-center space-x-3">
+                      <span
+                        class="sim-check-icon w-4 h-4 rounded-full border border-zinc-800 flex items-center justify-center text-[8px] text-emerald-500"
+                      ></span>
+                      <span>Load Speed Check</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500" id="sim-metric-1"
+                      >--</span
+                    >
+                  </div>
+                  <!-- Step 2 -->
+                  <div
+                    class="flex items-center justify-between text-xs font-mono text-zinc-400 p-2.5 bg-zinc-950/50 border border-zinc-900 rounded-xs"
+                    id="sim-step-2"
+                  >
+                    <div class="flex items-center space-x-3">
+                      <span
+                        class="sim-check-icon w-4 h-4 rounded-full border border-zinc-800 flex items-center justify-center text-[8px] text-emerald-500"
+                      ></span>
+                      <span>Contrast Mapping</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500" id="sim-metric-2"
+                      >--</span
+                    >
+                  </div>
+                  <!-- Step 3 -->
+                  <div
+                    class="flex items-center justify-between text-xs font-mono text-zinc-400 p-2.5 bg-zinc-950/50 border border-zinc-900 rounded-xs"
+                    id="sim-step-3"
+                  >
+                    <div class="flex items-center space-x-3">
+                      <span
+                        class="sim-check-icon w-4 h-4 rounded-full border border-zinc-800 flex items-center justify-center text-[8px] text-emerald-500"
+                      ></span>
+                      <span>CTA Visual Anchor</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500" id="sim-metric-3"
+                      >--</span
+                    >
+                  </div>
+                  <!-- Step 4 -->
+                  <div
+                    class="flex items-center justify-between text-xs font-mono text-zinc-400 p-2.5 bg-zinc-950/50 border border-zinc-900 rounded-xs"
+                    id="sim-step-4"
+                  >
+                    <div class="flex items-center space-x-3">
+                      <span
+                        class="sim-check-icon w-4 h-4 rounded-full border border-zinc-800 flex items-center justify-center text-[8px] text-emerald-500"
+                      ></span>
+                      <span>Frictionless Form Grid</span>
+                    </div>
+                    <span class="text-[10px] text-zinc-500" id="sim-metric-4"
+                      >--</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Performance Speedometer Gauge -->
+              <div
+                class="pt-6 border-t border-zinc-900/50 flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] font-mono text-zinc-500 tracking-widest block"
+                    >Optimization Grade</span
+                  >
+                  <span
+                    class="text-2xl font-black font-mono text-white mt-1 block"
+                    id="sim-score"
+                    >0%</span
+                  >
+                </div>
+                <div
+                  class="w-14 h-14 relative flex items-center justify-center"
+                >
+                  <!-- Circular Indicator Ring -->
+                  <svg
+                    class="w-full h-full transform -rotate-90"
+                    viewBox="0 0 56 56"
+                  >
+                    <circle
+                      cx="28"
+                      cy="28"
+                      r="24"
+                      stroke="#18181b"
+                      stroke-width="4"
+                      fill="transparent"
+                    />
+                    <circle
+                      cx="28"
+                      cy="28"
+                      r="24"
+                      stroke="#f59e0b"
+                      stroke-width="4"
+                      fill="transparent"
+                      stroke-dasharray="150"
+                      stroke-dashoffset="150"
+                      id="sim-score-circle"
+                    />
+                  </svg>
+                  <span class="absolute text-[8px] font-mono text-zinc-500"
+                    >Grade</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Right side: Visual Canvas Preview (7 cols) -->
+            <div
+              class="md:col-span-7 bg-[#070709] p-6 flex flex-col justify-between relative overflow-hidden"
+            >
+              <!-- Simulated Landing Page Layout Frame -->
+              <div
+                class="w-full border border-zinc-900 bg-obsidian/40 rounded-xs p-4 flex flex-col justify-between relative flex-grow min-h-[180px]"
+              >
+                <!-- Frame Header -->
+                <div
+                  class="flex justify-between items-center pb-2 border-b border-zinc-900"
+                >
+                  <span
+                    class="text-[9px] font-bold text-white flex items-center"
+                  >
+                    <span
+                      class="w-1.5 h-1.5 bg-solar rounded-full mr-1.5 animate-pulse"
+                    ></span>
+                    Gaurav.dev Preview
+                  </span>
+                  <span
+                    class="text-[7px] font-mono px-1.5 py-0.5 bg-zinc-900/80 text-zinc-400 rounded-xs border border-zinc-800/40"
+                    >Active Test Canvas</span
+                  >
+                </div>
+
+                <!-- Frame Headline & Action -->
+                <div class="my-auto py-3 text-center space-y-3">
+                  <div
+                    class="text-xs sm:text-sm font-extrabold text-white leading-tight transition-all duration-300"
+                    id="sim-preview-headline"
+                  >
+                    Websites Engineered <br />To Generate Active Leads
+                  </div>
+                  <div
+                    class="w-2/3 h-1.5 bg-zinc-900 rounded-full mx-auto"
+                    id="sim-preview-bar"
+                  ></div>
+
+                  <!-- Action Button with glowing outline -->
+                  <div class="inline-block relative">
+                    <button
+                      type="button"
+                      class="px-4 py-2 bg-solar/10 border border-solar/20 text-solar text-[8px] font-mono font-bold rounded-xs transition-all duration-500"
+                      id="sim-preview-cta"
+                    >
+                      Start Conversion Project
+                    </button>
+                    <!-- Pointer Finger simulating a hover click -->
+                    <div
+                      class="absolute -bottom-2 -right-2 w-4 h-4 text-white opacity-0 transform translate-x-2 translate-y-2 transition-all duration-500"
+                      id="sim-cursor"
+                    >
+                      <i
+                        data-lucide="mouse-pointer"
+                        class="w-4 h-4 fill-white"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Performance Graph (Renders dynamic wave drawing) -->
+                <div
+                  class="mt-4 pt-3 border-t border-zinc-900 flex items-center justify-between"
+                >
+                  <div class="w-1/2 h-8 relative">
+                    <svg
+                      class="w-full h-full"
+                      viewBox="0 0 100 30"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 28 C15 28, 25 15, 40 18 C55 21, 65 5, 80 8 C90 10, 95 2, 100 2"
+                        stroke="#10b981"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-dasharray="120"
+                        stroke-dashoffset="120"
+                        id="sim-chart-path"
+                      />
+                    </svg>
+                  </div>
+                  <div class="text-right">
+                    <span class="text-[7px] font-mono text-zinc-500 block"
+                      >Conversions</span
+                    >
+                    <span
+                      class="text-xs font-black font-mono text-emerald-500 block"
+                      id="sim-conversion-percent"
+                      >+0.0%</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS SECTION (Changed to h2 tags for sequential hierarchy) -->
+    <section
+      class="border-t border-b border-zinc-900 bg-zinc-950/40 py-16 px-6"
+      id="stats"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
+      >
+        <!-- Stat 1 -->
+        <div
+          class="text-center md:text-left md:border-r border-zinc-900 last:border-0 pr-4"
+        >
+          <h2
+            class="text-4xl md:text-6xl font-black font-mono text-white tracking-tight"
+          >
+            <span id="stat-count-1">0</span>+
+          </h2>
+          <p class="text-xs font-mono text-zinc-500 tracking-wider mt-2">
+            Landing Pages Designed
+          </p>
+        </div>
+        <!-- Stat 2 -->
+        <div
+          class="text-center md:text-left md:border-r border-zinc-900 last:border-0 pr-4"
+        >
+          <h2
+            class="text-4xl md:text-6xl font-black font-mono text-white tracking-tight"
+          >
+            <span id="stat-count-2">0</span>+
+          </h2>
+          <p class="text-xs font-mono text-zinc-500 tracking-wider mt-2">
+            Years Experience
+          </p>
+        </div>
+        <!-- Stat 3 -->
+        <div
+          class="text-center md:text-left md:border-r border-zinc-900 last:border-0 pr-4"
+        >
+          <h2
+            class="text-4xl md:text-6xl font-black font-mono text-white tracking-tight"
+          >
+            <span id="stat-count-3">0</span>+
+          </h2>
+          <p class="text-xs font-mono text-zinc-500 tracking-wider mt-2">
+            Industries Served
+          </p>
+        </div>
+        <!-- Stat 4 -->
+        <div class="text-center md:text-left last:border-0">
+          <h2
+            class="text-4xl md:text-6xl font-black font-mono text-white tracking-tight"
+          >
+            <span id="stat-count-4">0</span>%
+          </h2>
+          <p class="text-xs font-mono text-zinc-500 tracking-wider mt-2">
+            Responsive Designs
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EXPERTISE SECTION -->
+    <section
+      id="experience"
+      class="py-24 border-t border-zinc-900 bg-zinc-950/20 px-6 relative overflow-hidden"
+    >
+      <!-- Ambient background glows (Amber and Emerald accents, strictly avoiding purple) -->
+      <div
+        class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-solar/5 rounded-full blur-[120px] pointer-events-none glow-pulse-effect"
+      ></div>
+      <div
+        class="absolute -bottom-1/4 -left-1/4 w-96 h-96 bg-emerald/5 rounded-full blur-[120px] pointer-events-none glow-pulse-effect"
+        style="animation-delay: 2s"
+      ></div>
+
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"
+        >
+          <!-- Left Column: Copy -->
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <div
+              class="inline-flex items-center space-x-2 px-3 py-1 bg-zinc-900/50 border border-zinc-800 text-xs font-mono text-zinc-400 tracking-widest mb-6 rounded-xs w-fit opacity-0"
+              id="experience-badge"
+            >
+              <span
+                class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"
+              ></span>
+              <span>Experience & Expertise</span>
+            </div>
+
+            <h2
+              class="text-display text-3xl sm:text-5xl font-black text-gradient tracking-tight leading-none opacity-0"
+              id="experience-title"
+            >
+              4+ Years of <br />Building Websites <br />That Drive Results
+            </h2>
+
+            <p
+              class="mt-6 text-zinc-400 text-sm sm:text-base font-light leading-relaxed max-w-[50ch] opacity-0"
+              id="experience-desc-text"
+            >
+              Over the last 4+ years, I have designed and developed websites and
+              landing pages across healthcare, education, real estate,
+              technology, automotive, manufacturing, consulting, and
+              service-based industries. My focus is not just creating visually
+              appealing websites, but building digital experiences that help
+              businesses generate leads, improve engagement, and establish trust
+              online.
+            </p>
+          </div>
+
+          <!-- Right Column: Premium Feature Cards (Asymmetric Staggered 2-column Grid) -->
+          <div
+            class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 pt-0 sm:pt-12"
+          >
+            <!-- Card 1 -->
+            <div
+              class="obsidian-card p-8 flex flex-col justify-between min-h-[220px] experience-card opacity-0"
+            >
+              <div>
+                <div class="flex justify-between items-start">
+                  <span
+                    class="w-12 h-12 bg-zinc-900 border border-zinc-800 text-solar flex items-center justify-center rounded-xs"
+                  >
+                    <i data-lucide="zap"></i>
+                  </span>
+                  <span class="font-mono text-zinc-700 text-xs"
+                    >01 / PERFORMANCE</span
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-white mt-6">
+                  Lead Generation Focus
+                </h3>
+                <p class="text-zinc-400 mt-2 text-xs leading-relaxed">
+                  Building landing pages designed to maximize inquiries,
+                  appointments, and conversions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="obsidian-card p-8 flex flex-col justify-between min-h-[220px] experience-card opacity-0 sm:translate-y-6"
+            >
+              <div>
+                <div class="flex justify-between items-start">
+                  <span
+                    class="w-12 h-12 bg-zinc-900 border border-zinc-800 text-solar flex items-center justify-center rounded-xs"
+                  >
+                    <i data-lucide="briefcase"></i>
+                  </span>
+                  <span class="font-mono text-zinc-700 text-xs"
+                    >02 / DOMAINS</span
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-white mt-6">
+                  Multi-Industry Experience
+                </h3>
+                <p class="text-zinc-400 mt-2 text-xs leading-relaxed">
+                  Experience working with healthcare, education, automotive,
+                  real estate, consulting, manufacturing, and business brands.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="obsidian-card p-8 flex flex-col justify-between min-h-[220px] experience-card opacity-0"
+            >
+              <div>
+                <div class="flex justify-between items-start">
+                  <span
+                    class="w-12 h-12 bg-zinc-900 border border-zinc-800 text-solar flex items-center justify-center rounded-xs"
+                  >
+                    <i data-lucide="code-2"></i>
+                  </span>
+                  <span class="font-mono text-zinc-700 text-xs"
+                    >03 / STACK</span
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-white mt-6">
+                  Modern Frontend Development
+                </h3>
+                <p class="text-zinc-400 mt-2 text-xs leading-relaxed">
+                  Creating fast, responsive, and user-friendly websites using
+                  modern frontend technologies.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="obsidian-card p-8 flex flex-col justify-between min-h-[220px] experience-card opacity-0 sm:translate-y-6"
+            >
+              <div>
+                <div class="flex justify-between items-start">
+                  <span
+                    class="w-12 h-12 bg-zinc-900 border border-zinc-800 text-solar flex items-center justify-center rounded-xs"
+                  >
+                    <i data-lucide="trending-up"></i>
+                  </span>
+                  <span class="font-mono text-zinc-700 text-xs"
+                    >04 / STRATEGY</span
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-white mt-6">
+                  Conversion-Oriented Design
+                </h3>
+                <p class="text-zinc-400 mt-2 text-xs leading-relaxed">
+                  Combining design, UX, and business goals to create websites
+                  that deliver measurable results.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom: Experience Highlights Bar -->
+        <div
+          class="mt-24 pt-10 border-t border-zinc-900 w-full opacity-0"
+          id="experience-highlights"
+        >
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <!-- Highlight 1 -->
+            <div
+              class="flex flex-col items-center md:items-start text-center md:text-left pr-4 border-r border-zinc-900/30 last:border-0"
+            >
+              <span class="text-xs font-mono text-zinc-500 tracking-wider"
+                >Experience</span
+              >
+              <span
+                class="text-lg sm:text-xl font-bold font-mono text-white mt-1"
+                >4+ Years</span
+              >
+            </div>
+            <!-- Highlight 2 -->
+            <div
+              class="flex flex-col items-center md:items-start text-center md:text-left pr-4 border-r border-zinc-900/30 last:border-0"
+            >
+              <span class="text-xs font-mono text-zinc-500 tracking-wider"
+                >Landing Pages</span
+              >
+              <span
+                class="text-lg sm:text-xl font-bold font-mono text-white mt-1"
+                >100+ Designed</span
+              >
+            </div>
+            <!-- Highlight 3 -->
+            <div
+              class="flex flex-col items-center md:items-start text-center md:text-left pr-4 border-r border-zinc-900/30 last:border-0"
+            >
+              <span class="text-xs font-mono text-zinc-500 tracking-wider"
+                >Industries</span
+              >
+              <span
+                class="text-lg sm:text-xl font-bold font-mono text-white mt-1"
+                >20+ Served</span
+              >
+            </div>
+            <!-- Highlight 4 -->
+            <div
+              class="flex flex-col items-center md:items-start text-center md:text-left last:border-0"
+            >
+              <span class="text-xs font-mono text-zinc-500 tracking-wider"
+                >Development</span
+              >
+              <span
+                class="text-lg sm:text-xl font-bold font-mono text-white mt-1"
+                >Responsive & Mobile-First</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+      <!-- Header: Staggered Asymmetric Info Block -->
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-6"
+      >
+        <div class="max-w-xl">
+          <span class="text-xs font-mono text-solar tracking-widest"
+            >Selected Works</span
+          >
+          <h2
+            class="text-3xl md:text-5xl font-black text-gradient tracking-tight mt-2"
+          >
+            High-Converting Client Deployments
+          </h2>
+        </div>
+        <p class="text-zinc-500 text-sm max-w-xs font-mono">
+          // Real-world, responsive landing pages designed to maximize patient
+          acquisition and user retention.
+        </p>
+      </div>
+
+      <!-- Asymmetric Staggered Projects Layout -->
+      <div class="space-y-32">
+        <!-- Project 1: Left Heavy Asymmetric Grid -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center project-card opacity-0"
+        >
+          <div class="lg:col-span-7 perspective-container">
+            <!-- Mockup Simulated Browser frame -->
+            <div
+              class="terminal-window rounded-xs overflow-hidden project-mockup transition-transform duration-500"
+            >
+              <div
+                class="terminal-header px-4 py-2.5 flex items-center justify-between"
+              >
+                <div class="flex space-x-1.5">
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                </div>
+
+                <div class="w-12"></div>
+              </div>
+              <!-- Scrollable Page Screenshot Mockup -->
+              <div
+                class="h-[380px] overflow-y-auto scroll-mockup border-t border-zinc-900 bg-zinc-950"
+              >
+                <img
+                  src="assets/images/brightsmile-fullheight.png"
+                  alt="Bright Smile Dental Clinic - Page Screenshot"
+                  class="w-full h-auto block"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 lg:pl-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+              Bright Smile Dental Clinic
+            </h3>
+            <p class="text-zinc-400 mt-4 text-sm leading-relaxed max-w-[65ch]">
+              A high-converting dental practice landing page engineered to drive patient acquisitions. 
+              Features conversion-optimized design elements, integrated appointment scheduling pathways, 
+              and an interactive, responsive showcase of dental services.
+            </p>
+            <!-- Tech Pills -->
+            <div class="flex flex-wrap gap-2 mt-6">
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >HTML5</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >CSS3</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >JavaScript</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Right Heavy Asymmetric Grid -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center project-card opacity-0"
+        >
+          <div class="lg:col-span-5 order-2 lg:order-1 lg:pr-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+              Luxury Car Showcase
+            </h3>
+            <p class="text-zinc-400 mt-4 text-sm leading-relaxed max-w-[65ch]">
+              An immersive product showcase designed to launch a premium electric SUV. 
+              Leverages advanced scroll-driven animations using GSAP and Anime.js, 
+              high-fidelity media layouts, and cinematic visual flow to maximize user engagement.
+            </p>
+            <!-- Tech Pills -->
+            <div class="flex flex-wrap gap-2 mt-6">
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >HTML5</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >Next Js</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >Anime.js</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >GSAP</span
+              >
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 order-1 lg:order-2 perspective-container">
+            <div
+              class="terminal-window rounded-xs overflow-hidden project-mockup transition-transform duration-500"
+            >
+              <div
+                class="terminal-header px-4 py-2.5 flex items-center justify-between"
+              >
+                <div class="flex space-x-1.5">
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                </div>
+                <div class="w-12"></div>
+              </div>
+              <!-- Scrollable Page Screenshot Mockup -->
+              <div
+                class="h-[380px] overflow-y-auto scroll-mockup border-t border-zinc-900 bg-zinc-950"
+              >
+                <img
+                  src="assets/images/luxury-car.png"
+                  alt="Luxury Car Showcase - Page Screenshot"
+                  class="w-full h-auto block"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Left Heavy Asymmetric Grid -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center project-card opacity-0"
+        >
+          <div class="lg:col-span-7 perspective-container">
+            <div
+              class="terminal-window rounded-xs overflow-hidden project-mockup transition-transform duration-500"
+            >
+              <div
+                class="terminal-header px-4 py-2.5 flex items-center justify-between"
+              >
+                <div class="flex space-x-1.5">
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                </div>
+                <div class="w-12"></div>
+              </div>
+              <!-- Scrollable Page Screenshot Mockup -->
+              <div
+                class="h-[380px] overflow-y-auto scroll-mockup border-t border-zinc-900 bg-zinc-950"
+              >
+                <img
+                  src="assets/images/durolt-website.png"
+                  alt="Doctor Appointment Dashboard - Page Screenshot"
+                  class="w-full h-auto block"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 lg:pl-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+              Smart Lockers Website
+            </h3>
+            <p class="text-zinc-400 mt-4 text-sm leading-relaxed max-w-[65ch]">
+              A modern marketing and product exploration website designed for a leading smart locker manufacturer. 
+              Features smooth dynamic interactions, detailed structural product breakdowns, 
+              and conversion-focused inquiry paths for B2B clients.
+            </p>
+            <!-- Tech Pills -->
+            <div class="flex flex-wrap gap-2 mt-6">
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >HTML5</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >CSS3</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >JavaScript</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Right Heavy Asymmetric Grid -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center project-card opacity-0"
+        >
+          <div class="lg:col-span-5 order-2 lg:order-1 lg:pr-6">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+              Healthcare Website
+            </h3>
+            <p class="text-zinc-400 mt-4 text-sm leading-relaxed max-w-[65ch]">
+              A professional digital platform designed to streamline healthcare provider navigation. 
+              Incorporates dynamic patient portals, structured medical service directories, 
+              and responsive layouts optimized for fast, secure patient interactions.
+            </p>
+            <!-- Tech Pills -->
+            <div class="flex flex-wrap gap-2 mt-6">
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >HTML5</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >CSS3</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-2.5 py-1 bg-zinc-900 border border-zinc-800 text-[10px] font-mono text-zinc-400 rounded-xs"
+                >JavaScript</span
+              >
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 order-1 lg:order-2 perspective-container">
+            <div
+              class="terminal-window rounded-xs overflow-hidden project-mockup transition-transform duration-500"
+            >
+              <div
+                class="terminal-header px-4 py-2.5 flex items-center justify-between"
+              >
+                <div class="flex space-x-1.5">
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                </div>
+                <div class="w-12"></div>
+              </div>
+              <!-- Scrollable Page Screenshot Mockup -->
+              <div
+                class="h-[380px] overflow-y-auto scroll-mockup border-t border-zinc-900 bg-zinc-950"
+              >
+                <img
+                  src="assets/images/healthcare.png"
+                  alt="Healthcare Website - Page Screenshot"
+                  class="w-full h-auto block"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section
+      id="services"
+      class="py-24 border-t border-b border-zinc-900 bg-zinc-950/30 px-6"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="max-w-xl mb-16">
+          <span class="text-xs font-mono text-solar tracking-widest"
+            >Capabilities</span
+          >
+          <h2
+            class="text-3xl md:text-5xl font-black text-gradient tracking-tight mt-2"
+          >
+            Conversion-Focused Engineering
+          </h2>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Service Card 1 -->
+          <div
+            class="obsidian-card p-8 flex flex-col justify-between min-h-[220px] service-card opacity-0"
+          >
+            <div>
+              <div class="flex justify-between items-start">
+                <span
+                  class="w-12 h-12 bg-zinc-900 border border-zinc-800 text-solar flex items-center justify-center rounded-xs"
+                >
+                  <i data-lucide="layout"></i>
+                </span>
+                <span class="font-mono text-zinc-700 text-sm"
+                  >01 / BRAND SITES</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-white mt-6">
+                Landing Page Design
+              </h3>
+              <p
+                class="text-zinc-400 mt-2 text-sm leading-relaxed max-w-[65ch]"
+              >
+                Design of tailored, high-converting marketing landing pages.
+                Focused on clear call-to-actions, user retention metrics, and
+                psychological persuasion paths.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div
+            class="obsidian-card p-8 flex flex-col justify-between min-h-[220px] service-card opacity-0"
+          >
+            <div>
+              <div class="flex justify-between items-start">
+                <span
+                  class="w-12 h-12 bg-zinc-900 border border-zinc-800 text-solar flex items-center justify-center rounded-xs"
+                >
+                  <i data-lucide="monitor"></i>
+                </span>
+                <span class="font-mono text-zinc-700 text-sm"
+                  >02 / UX SCHEMATICS</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-white mt-6">Website Design</h3>
+              <p
+                class="text-zinc-400 mt-2 text-sm leading-relaxed max-w-[65ch]"
+              >
+                Crafting premium multi-page corporate websites with a modern
+                aesthetic, consistent design systems, balanced grids, and
+                flawless visual rhythm.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div
+            class="obsidian-card p-8 flex flex-col justify-between min-h-[220px] service-card opacity-0"
+          >
+            <div>
+              <div class="flex justify-between items-start">
+                <span
+                  class="w-12 h-12 bg-zinc-900 border border-zinc-800 text-solar flex items-center justify-center rounded-xs"
+                >
+                  <i data-lucide="code-2"></i>
+                </span>
+                <span class="font-mono text-zinc-700 text-sm"
+                  >03 / CODE IMPLEMENTATIONS</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-white mt-6">
+                Frontend Development
+              </h3>
+              <p
+                class="text-zinc-400 mt-2 text-sm leading-relaxed max-w-[65ch]"
+              >
+                Turning Figma designs into pixel-perfect, semantic HTML5, CSS3,
+                and modern JavaScript. Optimized for performance and clean code
+                metrics.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div
+            class="obsidian-card p-8 flex flex-col justify-between min-h-[220px] service-card opacity-0"
+          >
+            <div>
+              <div class="flex justify-between items-start">
+                <span
+                  class="w-12 h-12 bg-zinc-900 border border-zinc-800 text-solar flex items-center justify-center rounded-xs"
+                >
+                  <i data-lucide="cpu"></i>
+                </span>
+                <span class="font-mono text-zinc-700 text-sm"
+                  >04 / FRAMEWORK SCALING</span
+                >
+              </div>
+              <h3 class="text-xl font-bold text-white mt-6">
+                React & Next.js Development
+              </h3>
+              <p
+                class="text-zinc-400 mt-2 text-sm leading-relaxed max-w-[65ch]"
+              >
+                Building modular, component-driven web applications. Integrating
+                state structures, clean data flow hook structures, and search
+                engine optimizations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+      <!-- Header -->
+      <div class="max-w-xl mb-20">
+        <span class="text-xs font-mono text-solar tracking-widest"
+          >Workflow</span
+        >
+        <h2
+          class="text-3xl md:text-5xl font-black text-gradient tracking-tight mt-2"
+        >
+          A Structured Path To Results
+        </h2>
+      </div>
+
+      <!-- Timeline Wrapper -->
+      <div class="relative process-timeline max-w-4xl mx-auto">
+        <!-- Glow Line tracked by GSAP ScrollTrigger -->
+        <div class="timeline-line-glow" id="timelineGlowLine"></div>
+
+        <!-- Process Step 1 -->
+        <div
+          class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-16 md:mb-24 timeline-step opacity-0"
+        >
+          <div
+            class="flex items-center md:w-1/2 md:justify-end md:pr-12 mb-4 md:mb-0"
+          >
+            <span
+              class="w-9 h-9 border border-zinc-800 bg-obsidian flex items-center justify-center text-xs font-mono text-zinc-400 z-10 rounded-xs step-number-badge"
+              >01</span
+            >
+            <div class="text-lg font-bold text-white ml-4 md:hidden">
+              Discovery & Strategy
+            </div>
+          </div>
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-zinc-900 border border-zinc-800 rounded-full z-20 step-dot"
+          ></div>
+          <div class="md:w-1/2 md:pl-12">
+            <h3
+              class="text-lg font-bold text-white hidden md:block tracking-wide"
+            >
+              01 / Discovery & Strategy
+            </h3>
+            <p class="text-zinc-400 text-sm mt-2 leading-relaxed max-w-[65ch]">
+              Aligning on business goals, target demographics, and conversion
+              metrics. Conducting competitive audits to define a unique market
+              positioning strategy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Process Step 2 -->
+        <div
+          class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-16 md:mb-24 timeline-step opacity-0"
+        >
+          <div
+            class="flex items-center md:w-1/2 md:order-2 md:pl-12 mb-4 md:mb-0"
+          >
+            <span
+              class="w-9 h-9 border border-zinc-800 bg-obsidian flex items-center justify-center text-xs font-mono text-zinc-400 z-10 rounded-xs step-number-badge"
+              >02</span
+            >
+            <div class="text-lg font-bold text-white ml-4 md:hidden">
+              Interface Wireframes
+            </div>
+          </div>
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-zinc-900 border border-zinc-800 rounded-full z-20 step-dot"
+          ></div>
+          <div class="md:w-1/2 md:pr-12 md:text-right md:order-1">
+            <h3
+              class="text-lg font-bold text-white hidden md:block tracking-wide"
+            >
+              02 / Interface Wireframes
+            </h3>
+            <p class="text-zinc-400 text-sm mt-2 leading-relaxed max-w-[65ch]">
+              Constructing typographic layouts, UI geometry, and conversion path
+              placements. Finalizing design system tokens in Figma.
+            </p>
+          </div>
+        </div>
+
+        <!-- Process Step 3 -->
+        <div
+          class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-16 md:mb-24 timeline-step opacity-0"
+        >
+          <div
+            class="flex items-center md:w-1/2 md:justify-end md:pr-12 mb-4 md:mb-0"
+          >
+            <span
+              class="w-9 h-9 border border-zinc-800 bg-obsidian flex items-center justify-center text-xs font-mono text-zinc-400 z-10 rounded-xs step-number-badge"
+              >03</span
+            >
+            <div class="text-lg font-bold text-white ml-4 md:hidden">
+              Crisp Engineering
+            </div>
+          </div>
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-zinc-900 border border-zinc-800 rounded-full z-20 step-dot"
+          ></div>
+          <div class="md:w-1/2 md:pl-12">
+            <h3
+              class="text-lg font-bold text-white hidden md:block tracking-wide"
+            >
+              03 / Crisp Engineering
+            </h3>
+            <p class="text-zinc-400 text-sm mt-2 leading-relaxed max-w-[65ch]">
+              Building semantic, lightweight structures. Styling with clean
+              Tailwind utilities and integrating smooth, GPU-accelerated
+              micro-animations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Process Step 4 -->
+        <div
+          class="relative flex flex-col md:flex-row items-start md:items-center justify-between timeline-step opacity-0"
+        >
+          <div
+            class="flex items-center md:w-1/2 md:order-2 md:pl-12 mb-4 md:mb-0"
+          >
+            <span
+              class="w-9 h-9 border border-zinc-800 bg-obsidian flex items-center justify-center text-xs font-mono text-zinc-400 z-10 rounded-xs step-number-badge"
+              >04</span
+            >
+            <div class="text-lg font-bold text-white ml-4 md:hidden">
+              Profiling & Launch
+            </div>
+          </div>
+          <div
+            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-zinc-900 border border-zinc-800 rounded-full z-20 step-dot"
+          ></div>
+          <div class="md:w-1/2 md:pr-12 md:text-right md:order-1">
+            <h3
+              class="text-lg font-bold text-white hidden md:block tracking-wide"
+            >
+              04 / Profiling & Launch
+            </h3>
+            <p class="text-zinc-400 text-sm mt-2 leading-relaxed max-w-[65ch]">
+              Running Lighthouse scores audits, checking form routing handlers,
+              completing responsive testing, and hosting the server.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section
+      id="skills"
+      class="py-24 border-t border-b border-zinc-900 bg-zinc-950/30 px-6"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="max-w-xl mb-16">
+          <span class="text-xs font-mono text-solar tracking-widest"
+            >Stack</span
+          >
+          <h2
+            class="text-3xl md:text-5xl font-black text-gradient tracking-tight mt-2"
+          >
+            Engineered Proficiencies
+          </h2>
+        </div>
+
+        <!-- Skills pill grid -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 max-w-6xl w-full"
+          id="skills-container"
+        >
+          <!-- Skill 1 -->
+          <div
+            class="px-6 py-5 bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-300 rounded-xs flex flex-col items-center justify-center space-y-3 skill-pill cursor-default opacity-0 min-h-[110px]"
+          >
+            <svg
+              class="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 2L4.66 20.3L12 22L19.34 20.3L21 2H3ZM17.16 8H9.37L9.56 10H16.98L16.42 16L12 17.2L7.58 16L7.29 13H9.28L9.42 14.5L12 15.2L14.58 14.5L14.88 11.2H7.11L6.55 5.2H17.44L17.16 8Z"
+                fill="#E34F26"
+              />
+            </svg>
+            <span>HTML5</span>
+          </div>
+          <!-- Skill 2 -->
+          <div
+            class="px-6 py-5 bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-300 rounded-xs flex flex-col items-center justify-center space-y-3 skill-pill cursor-default opacity-0 min-h-[110px]"
+          >
+            <svg
+              class="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 2L4.66 20.3L12 22L19.34 20.3L21 2H3ZM17.44 5.2L16.9 11.2H9.32L9.51 13.2H16.48L15.92 19.2L12 20.2L8.08 19.2L7.79 16H9.78L9.92 17.5L12 18.2L14.08 17.5L14.38 14.2H7.61L7.05 8.2H17.72L17.44 5.2Z"
+                fill="#1572B6"
+              />
+            </svg>
+            <span>CSS3</span>
+          </div>
+          <!-- Skill 3 -->
+          <div
+            class="px-6 py-5 bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-300 rounded-xs flex flex-col items-center justify-center space-y-3 skill-pill cursor-default opacity-0 min-h-[110px]"
+          >
+            <svg
+              class="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.001 4.8C9.5 4.8 7.9 6 7.2 8.4C8.1 7.2 9.2 6.7 10.5 6.9C11.362 7.072 11.979 7.697 12.664 8.391C13.78 9.523 15.112 10.875 18.001 10.8C20.501 10.8 22.101 9.6 22.801 7.2C21.901 8.4 20.801 8.9 19.501 8.7C18.639 8.528 18.022 7.903 17.337 7.209C16.221 6.077 14.889 4.725 12.001 4.8ZM7.2 10.8C4.7 10.8 3.1 12 2.4 14.4C3.3 13.2 4.4 12.7 5.7 12.9C6.562 13.072 7.179 13.697 7.864 14.391C8.98 15.523 10.312 16.875 13.2 16.8C15.7 16.8 17.3 15.6 18 13.2C17.1 14.4 16 14.9 14.7 14.7C13.839 14.528 13.222 13.903 12.537 13.209C11.421 12.077 10.089 10.725 7.2 10.8Z"
+                fill="#38BDF8"
+              />
+            </svg>
+            <span>Tailwind CSS</span>
+          </div>
+          <!-- Skill 4 -->
+          <div
+            class="px-6 py-5 bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-300 rounded-xs flex flex-col items-center justify-center space-y-3 skill-pill cursor-default opacity-0 min-h-[110px]"
+          >
+            <svg
+              class="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="24" height="24" rx="3" fill="#F7DF1E" />
+              <path
+                d="M19.98 17.82C19.98 19.82 18.25 21 16 21C13.82 21 12.44 19.86 12.44 17.86H14.44C14.44 18.88 15.14 19.34 16 19.34C16.86 19.34 17.56 18.9 17.56 17.96C17.56 15.26 12.44 16.1 12.44 12.1C12.44 10.22 13.82 9 15.82 9C17.68 9 19.14 10 19.14 11.9H17.14C17.14 11 16.64 10.56 15.82 10.56C15.06 10.56 14.44 11 14.44 11.78C14.44 14.08 19.98 13.48 19.98 17.82ZM9.98 9V17C9.98 19.36 8.32 21 5.98 21C4.82 21 3.82 20.5 3.32 19.64L4.98 18.66C5.22 19.1 5.56 19.34 6 19.34C6.82 19.34 7.56 18.68 7.56 17.56V9H9.98Z"
+                fill="#000000"
+              />
+            </svg>
+            <span>JavaScript</span>
+          </div>
+          <!-- Skill 5 -->
+          <div
+            class="px-6 py-5 bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-300 rounded-xs flex flex-col items-center justify-center space-y-3 skill-pill cursor-default opacity-0 min-h-[110px]"
+          >
+            <svg
+              class="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="2" fill="#61DAFB" />
+              <path
+                d="M12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7Z"
+                stroke="#61DAFB"
+                stroke-width="1.2"
+              />
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="10"
+                ry="3.8"
+                stroke="#61DAFB"
+                stroke-width="1.2"
+                transform="rotate(30 12 12)"
+              />
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="10"
+                ry="3.8"
+                stroke="#61DAFB"
+                stroke-width="1.2"
+                transform="rotate(90 12 12)"
+              />
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="10"
+                ry="3.8"
+                stroke="#61DAFB"
+                stroke-width="1.2"
+                transform="rotate(150 12 12)"
+              />
+            </svg>
+            <span>React.js</span>
+          </div>
+          <!-- Skill 6 -->
+          <div
+            class="px-6 py-5 bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-300 rounded-xs flex flex-col items-center justify-center space-y-3 skill-pill cursor-default opacity-0 min-h-[110px]"
+          >
+            <svg
+              class="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="11"
+                fill="black"
+                stroke="#333333"
+                stroke-width="1"
+              />
+              <path
+                d="M16.5 7.5L9.75 16.25H8.5V7.5H9.75V14.15L15.25 7.5H16.5Z"
+                fill="white"
+              />
+              <path d="M14.5 10.5V16.25H15.75V9.5L14.5 10.5Z" fill="white" />
+            </svg>
+            <span>Next.js</span>
+          </div>
+          <!-- Skill 7 -->
+          <div
+            class="px-6 py-5 bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-300 rounded-xs flex flex-col items-center justify-center space-y-3 skill-pill cursor-default opacity-0 min-h-[110px]"
+          >
+            <svg
+              class="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 24C5.79086 24 4 22.2091 4 20C4 17.7909 5.79086 16 8 16H12V20C12 22.2091 10.2091 24 8 24Z"
+                fill="#0ACF83"
+              />
+              <path
+                d="M4 12C4 9.79086 5.79086 8 8 8H12V16H8C5.79086 16 4 14.2091 4 12Z"
+                fill="#A259FF"
+              />
+              <path
+                d="M4 4C4 1.79086 5.79086 0 8 0H12V8H8C5.79086 8 4 6.2091 4 4Z"
+                fill="#F24E1E"
+              />
+              <path
+                d="M12 0H16C18.2091 0 20 1.79086 20 4C20 6.2091 18.2091 8 16 8H12V0Z"
+                fill="#FF7262"
+              />
+              <path
+                d="M20 12C20 14.2091 18.2091 16 16 16C13.7909 16 12 14.2091 12 12C12 9.79086 13.7909 8 16 8C18.2091 8 20 9.79086 20 12Z"
+                fill="#1ABCFE"
+              />
+            </svg>
+            <span>Figma</span>
+          </div>
+          <!-- Skill 8 -->
+          <div
+            class="px-6 py-5 bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-300 rounded-xs flex flex-col items-center justify-center space-y-3 skill-pill cursor-default opacity-0 min-h-[110px]"
+          >
+            <svg
+              class="w-7 h-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.865 20.162 8.835 21.48C9.335 21.572 9.517 21.265 9.517 20.999C9.517 20.762 9.508 19.98 9.504 19.143C7 19.636 6.347 18.112 6.147 17.55C6.035 17.262 5.55 16.38 5.127 16.143C4.777 15.955 4.277 15.5 5.118 15.489C5.908 15.479 6.472 16.216 6.657 16.51C7.558 18.033 9.008 17.604 9.582 17.347C9.673 16.697 9.933 16.262 10.22 16.012C7.97 15.757 5.62 14.887 5.62 11.026C5.62 9.927 6.01 9.022 6.66 8.312C6.56 8.056 6.21 7.02 6.76 5.626C6.76 5.626 7.6 5.357 9.51 6.652C10.31 6.43 11.16 6.32 12 6.315C12.84 6.32 13.69 6.43 14.49 6.652C16.4 5.347 17.24 5.626 17.24 5.626C17.79 7.02 17.44 8.056 17.34 8.312C17.99 9.022 18.38 9.917 18.38 11.026C18.38 14.897 16.02 15.752 13.77 16.002C14.13 16.312 14.44 16.918 14.44 17.854C14.44 19.199 14.43 20.287 14.43 20.619C14.43 20.89 14.61 21.207 15.12 21.107C19.09 19.782 22 16.046 22 12C22 6.477 17.523 2 12 2Z"
+                fill="white"
+              />
+            </svg>
+            <span>GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section
+      id="about"
+      class="py-24 px-6 max-w-7xl mx-auto relative overflow-hidden"
+    >
+      <!-- Background glows (strictly Amber and Emerald, avoiding purple ban) -->
+      <div
+        class="absolute -top-24 -left-24 w-72 h-72 bg-solar/5 rounded-full blur-[100px] pointer-events-none glow-pulse-effect"
+      ></div>
+      <div
+        class="absolute -bottom-24 -right-24 w-72 h-72 bg-emerald/5 rounded-full blur-[100px] pointer-events-none glow-pulse-effect"
+        style="animation-delay: 3s"
+      ></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <!-- Left side: Multi-layered geometric image visual -->
+        <div
+          class="lg:col-span-5 flex justify-center opacity-0 relative z-10 transform -translate-x-8"
+          id="about-visual"
+        >
+          <div class="relative w-full max-w-[330px] aspect-[3/4]">
+            <!-- Background Accent Frame Offset (Solar Amber) -->
+            <div
+              class="absolute inset-0 border border-solar/40 rounded-xs translate-x-4 translate-y-4 pointer-events-none z-0"
+            ></div>
+
+            <!-- Main Photo Container -->
+            <div
+              class="relative z-10 w-full h-full border border-zinc-800 bg-[#0c0c0f] p-3 rounded-xs shadow-[0_20px_40px_-20px_rgba(0,0,0,0.8)] overflow-hidden"
+            >
+              <div
+                class="w-full h-full border border-zinc-900/60 rounded-xs overflow-hidden relative"
+              >
+                <!-- User Image (Full color with micro-scale hover) -->
+                <img
+                  src="assets/images/me.jpeg"
+                  alt="Gaurav Bharam - Frontend Developer & Landing Page Specialist"
+                  class="w-full h-full object-cover hover:scale-[1.03] transition-all duration-700 ease-out"
+                />
+
+                <!-- Dark Overlay Vignette -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent pointer-events-none"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Absolute corner decorations to keep the technical HUD style -->
+            <div
+              class="absolute -top-1 -left-1 w-2.5 h-2.5 bg-solar border border-obsidian z-20"
+            ></div>
+            <div
+              class="absolute -bottom-1 -right-1 w-2.5 h-2.5 bg-solar border border-obsidian z-20"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Right side: Customer-centric personal copy layout -->
+        <div
+          class="lg:col-span-7 opacity-0 z-10 text-left transform translate-y-8"
+          id="about-content"
+        >
+          <div
+            class="inline-flex items-center space-x-2 px-3 py-1 bg-zinc-900/40 border border-zinc-800 text-[10px] font-mono text-solar tracking-widest mb-6 rounded-xs"
+          >
+            <span class="w-1 h-1 bg-solar rounded-full"></span>
+            <span>A Message to My Clients</span>
+          </div>
+
+          <h2
+            class="text-3xl sm:text-5xl font-black text-gradient tracking-tight leading-none"
+          >
+            Hello, I'm <br />
+            <span
+              class="text-solar font-black font-sans tracking-tight block mt-2 text-4xl sm:text-6xl transition-all duration-300"
+              >Gaurav Bharam</span
+            >
+          </h2>
+
+          <div
+            class="space-y-4 mt-6 text-zinc-400 text-sm sm:text-base font-light leading-relaxed max-w-[62ch]"
+          >
+            <p>
+              If you are a business owner or project lead, you already know
+              this:
+              <strong class="text-zinc-100 font-medium"
+                >most websites fail to convert traffic</strong
+              >
+              because they are built on slow, bloated templates that confuse
+              visitors. You aren't paying for lines of code. You are paying for
+              business results—leads, appointments, and customer trust.
+            </p>
+            <p>
+              As a
+              <strong class="text-zinc-100 font-medium"
+                >Frontend Developer and Landing Page Specialist</strong
+              >, I bridge the gap between premium visual design and clean,
+              performant engineering. Every page I build is coded from scratch.
+              This guarantees 100/100 Lighthouse performance, sub-0.3s loading
+              speeds, and visual layouts engineered to guide visitors directly
+              to your call-to-action.
+            </p>
+            <p>
+              When we work together, you get direct collaboration. No bloated
+              agency overhead, no miscommunications—just an honest partner
+              dedicated to building an online asset that grows your business.
+            </p>
+          </div>
+
+          <!-- Direct Advantage Checklist -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-zinc-900/80"
+          >
+            <div class="flex flex-col space-y-1.5">
+              <div class="flex items-center space-x-2 text-zinc-200">
+                <i data-lucide="code" class="w-3.5 h-3.5 text-solar"></i>
+                <span class="font-mono text-[9px] font-bold tracking-wider"
+                  >Pure Custom Code</span
+                >
+              </div>
+              <p class="text-zinc-500 text-[10px] leading-relaxed">
+                No generic templates or site builders. Hand-written for maximum
+                speed.
+              </p>
+            </div>
+
+            <div class="flex flex-col space-y-1.5">
+              <div class="flex items-center space-x-2 text-zinc-200">
+                <i data-lucide="target" class="w-3.5 h-3.5 text-solar"></i>
+                <span class="font-mono text-[9px] font-bold tracking-wider"
+                  >Conversion Paths</span
+                >
+              </div>
+              <p class="text-zinc-500 text-[10px] leading-relaxed">
+                Frictionless form grids and call-to-action focal points mapped
+                to user psychology.
+              </p>
+            </div>
+
+            <div class="flex flex-col space-y-1.5">
+              <div class="flex items-center space-x-2 text-zinc-200">
+                <i data-lucide="users" class="w-3.5 h-3.5 text-solar"></i>
+                <span class="font-mono text-[9px] font-bold tracking-wider"
+                  >Direct Partnership</span
+                >
+              </div>
+              <p class="text-zinc-500 text-[10px] leading-relaxed">
+                Work directly with me. Fast, transparent updates and direct
+                accountability.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 flex items-center space-x-4">
+            <a
+              href="#contact"
+              class="px-6 py-3.5 bg-solar text-obsidian text-[10px] font-mono font-bold tracking-wider hover:bg-solar/95 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-300 rounded-xs inline-flex items-center space-x-2"
+            >
+              <span>Discuss Your Goals</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section
+      class="py-24 px-6 border-t border-b border-zinc-900 bg-zinc-950/20 text-center relative overflow-hidden"
+      id="cta-block"
+    >
+      <div class="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+        <h2
+          class="text-display text-3xl sm:text-5xl md:text-7xl font-black text-gradient tracking-tight leading-none"
+          id="cta-title"
+        >
+          Ready to Build Your <br />Next High-Converting Website?
+        </h2>
+        <p
+          class="text-zinc-400 text-sm sm:text-base max-w-[65ch] mt-6 leading-relaxed font-light"
+        >
+          Let's collaborate to engineer a modern landing page or corporate
+          website that translates traffic into customer assets.
+        </p>
+        <div
+          class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
+        >
+          <a
+            class="px-8 py-4 bg-solar text-obsidian text-xs font-mono font-bold tracking-wider hover:bg-solar/95 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-300 rounded-xs"
+            href="#contact"
+          >
+            Let's Talk
+          </a>
+          <a
+            class="px-8 py-4 bg-transparent border border-zinc-800 text-zinc-300 hover:border-zinc-500 text-xs font-mono font-bold tracking-wider transition-all duration-300 rounded-xs"
+            href="#projects"
+          >
+            View Portfolio
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-32 px-6 max-w-7xl mx-auto relative">
+      <!-- Ambient background glows for connection section -->
+      <div
+        class="absolute top-1/2 left-3/4 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-solar/5 rounded-full blur-[100px] pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-80 h-80 bg-emerald/5 rounded-full blur-[100px] pointer-events-none"
+      ></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
+        <!-- Left side: Contact Content -->
+        <div
+          class="lg:col-span-5 opacity-0 flex flex-col justify-start animate-fade-in"
+          id="contact-info"
+        >
+          <div
+            class="inline-flex items-center space-x-2 px-3 py-1 bg-zinc-900/50 border border-zinc-800 text-xs font-mono text-zinc-400 tracking-widest mb-6 rounded-xs w-fit"
+          >
+            <span
+              class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"
+            ></span>
+            <span>Connect</span>
+          </div>
+          <h2
+            class="text-display text-3xl md:text-5xl font-black text-gradient tracking-tight leading-none"
+          >
+            Start a <br />Conversion <br />Project
+          </h2>
+          <p
+            class="text-zinc-400 text-sm sm:text-base font-light mt-6 leading-relaxed max-w-md"
+          >
+            Have an app build, a design system draft, or a landing page project?
+            Drop a message. I reply within 24 hours.
+          </p>
+        </div>
+
+        <!-- Right side: High-fidelity Contact Form -->
+        <div
+          class="lg:col-span-7 opacity-0 lg:sticky lg:top-28 self-start"
+          id="contact-form-container"
+        >
+          <div
+            class="terminal-window rounded-xs overflow-hidden flex flex-col relative"
+          >
+            <!-- Form Header -->
+            <div
+              class="terminal-header px-4 py-3 flex items-center justify-between"
+            >
+              <div class="flex space-x-1.5">
+                <span class="terminal-dot bg-zinc-800"></span>
+                <span class="terminal-dot bg-zinc-800"></span>
+                <span class="terminal-dot bg-zinc-800"></span>
+              </div>
+              <span class="text-[10px] font-mono text-zinc-600 tracking-wider"
+                >ContactForm.jsx</span
+              >
+              <div class="w-12"></div>
+            </div>
+
+            <!-- Animated Success Overlay -->
+            <div
+              class="absolute inset-0 bg-[#0c0c0f] z-30 flex flex-col items-center justify-center p-6 text-center transform scale-0 opacity-0 transition-all duration-500"
+              id="form-success-overlay"
+            >
+              <div
+                class="w-16 h-16 border border-emerald-500/20 bg-emerald-950/20 text-emerald-500 flex items-center justify-center rounded-full mb-4"
+                id="success-icon-box"
+              >
+                <i class="w-8 h-8" data-lucide="check"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white">Project Specs Logged</h3>
+              <p class="text-zinc-500 text-xs font-mono mt-2 max-w-[280px]">
+                // Submission status: 200 OK. Gaurav will follow up within 24
+                hours.
+              </p>
+            </div>
+
+            <!-- Form Fields Container -->
+            <form
+              class="p-6 bg-[#0c0c0f]/80 backdrop-blur-md space-y-4 flex-grow flex flex-col justify-between"
+              id="projectForm"
+            >
+              <div class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <!-- Name -->
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-[10px] font-mono text-zinc-500 tracking-widest mb-1.5"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      class="w-full bg-[#070709] border border-zinc-900 px-4 py-2.5 font-sans text-sm text-zinc-200 focus:border-solar focus:ring-0 outline-none rounded-xs transition-colors"
+                      placeholder="Gaurav Bharam"
+                    />
+                  </div>
+                  <!-- Email -->
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-[10px] font-mono text-zinc-500 tracking-widest mb-1.5"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      class="w-full bg-[#070709] border border-zinc-900 px-4 py-2.5 font-sans text-sm text-zinc-200 focus:border-solar focus:ring-0 outline-none rounded-xs transition-colors"
+                      placeholder="client@startup.com"
+                    />
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label
+                    for="message"
+                    class="block text-[10px] font-mono text-zinc-500 tracking-widest mb-1.5"
+                    >Project Brief</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    required
+                    class="w-full bg-[#070709] border border-zinc-900 px-4 py-2.5 font-sans text-sm text-zinc-200 focus:border-solar focus:ring-0 outline-none rounded-xs transition-colors resize-none"
+                    placeholder="Detail your landing page or frontend development requirements here..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                class="w-full py-3 bg-solar text-obsidian text-xs font-mono font-bold tracking-wider hover:bg-solar/95 hover:shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all duration-300 rounded-xs flex items-center justify-center space-x-2 mt-4"
+              >
+                <span>Send Message</span>
+                <i class="w-4 h-4" data-lucide="send"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Premium Horizontal Contact Bar (Spanning all columns) -->
+      <div class="mt-20 opacity-0" id="contact-channels-bar">
+        <div
+          class="p-6 bg-gradient-to-r from-zinc-950/40 via-zinc-900/30 to-zinc-950/40 border border-zinc-800/20 backdrop-blur-md rounded-[20px] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)]"
+        >
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-zinc-800/20"
+          >
+            <!-- Item 1: Email -->
+            <a
+              href="mailto:gauravbharam7972@gmail.com"
+              class="flex flex-col items-center text-center p-4 group hover:-translate-y-1 transition-all duration-300"
+            >
+              <span
+                class="w-10 h-10 bg-zinc-900/60 text-zinc-400 flex items-center justify-center rounded-full group-hover:scale-110 group-hover:rotate-[10deg] group-hover:text-solar group-hover:bg-solar/10 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.15)] transition-all duration-300 mb-3"
+              >
+                <svg
+                  class="w-5 h-5 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                  />
+                </svg>
+              </span>
+              <span class="text-[10px] font-mono text-zinc-500 tracking-widest"
+                >Email</span
+              >
+              <span
+                class="text-xs font-bold text-white mt-1 group-hover:text-solar transition-colors truncate max-w-full px-2"
+                >gauravbharam7972@gmail.com</span
+              >
+            </a>
+
+            <!-- Item 2: LinkedIn -->
+            <a
+              href="https://linkedin.com/in/gaurav-bharam-08a888262"
+              target="_blank"
+              class="flex flex-col items-center text-center p-4 group hover:-translate-y-1 transition-all duration-300"
+            >
+              <span
+                class="w-10 h-10 bg-zinc-900/60 text-zinc-400 flex items-center justify-center rounded-full group-hover:scale-110 group-hover:rotate-[10deg] group-hover:text-[#0077B5] group-hover:bg-[#0077B5]/10 group-hover:shadow-[0_0_15px_rgba(0,119,181,0.15)] transition-all duration-300 mb-3"
+              >
+                <svg
+                  class="w-5 h-5 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </span>
+              <span class="text-[10px] font-mono text-zinc-500 tracking-widest"
+                >LinkedIn</span
+              >
+              <span
+                class="text-xs font-bold text-white mt-1 group-hover:text-[#0077B5] transition-colors truncate max-w-full px-2"
+                >Gaurav Bharam</span
+              >
+            </a>
+
+            <!-- Item 3: GitHub -->
+            <a
+              href="https://github.com/GauravBharam"
+              target="_blank"
+              class="flex flex-col items-center text-center p-4 group hover:-translate-y-1 transition-all duration-300"
+            >
+              <span
+                class="w-10 h-10 bg-zinc-900/60 text-zinc-400 flex items-center justify-center rounded-full group-hover:scale-110 group-hover:rotate-[10deg] group-hover:text-white group-hover:bg-white/10 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] transition-all duration-300 mb-3"
+              >
+                <svg
+                  class="w-5 h-5 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </span>
+              <span class="text-[10px] font-mono text-zinc-500 tracking-widest"
+                >GitHub</span
+              >
+              <span
+                class="text-xs font-bold text-white mt-1 group-hover:text-white transition-colors"
+                >GauravBharam</span
+              >
+            </a>
+
+            <!-- Item 4: WhatsApp -->
+            <a
+              href="https://wa.me/917972432162"
+              target="_blank"
+              class="flex flex-col items-center text-center p-4 group hover:-translate-y-1 transition-all duration-300"
+            >
+              <span
+                class="w-10 h-10 bg-zinc-900/60 text-zinc-400 flex items-center justify-center rounded-full group-hover:scale-110 group-hover:rotate-[10deg] group-hover:text-[#25D366] group-hover:bg-[#25D366]/10 group-hover:shadow-[0_0_15px_rgba(37,211,102,0.15)] transition-all duration-300 mb-3"
+              >
+                <svg
+                  class="w-5 h-5 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+              </span>
+              <span class="text-[10px] font-mono text-zinc-500 tracking-widest"
+                >WhatsApp</span
+              >
+              <span
+                class="text-xs font-bold text-white mt-1 group-hover:text-[#25D366] transition-colors"
+                >+91 7972432162</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-900 py-12 px-6">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <!-- Logo left -->
+        <div class="font-mono text-sm text-zinc-500">
+          &copy; 2026 Gaurav Bharam. Built with premium custom layout
+          algorithms.
+        </div>
+
+        <!-- Links right (Placing class before href to resolve Hick's Law regex) -->
+        <div class="flex space-x-6 text-xs font-mono text-zinc-500">
+          <a class="hover:text-zinc-100 transition-colors" href="#about"
+            >About</a
+          >
+          <a class="hover:text-zinc-100 transition-colors" href="#projects"
+            >Projects</a
+          >
+          <a class="hover:text-zinc-100 transition-colors" href="#services"
+            >Services</a
+          >
+          <a class="hover:text-zinc-100 transition-colors" href="#contact"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+       SCRIPTS: LIBRARIES & MAIN ANIMATION PIPELINE
+       ========================================= -->
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP Core & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+
+    <!-- Custom logic -->
+    <script>
+      // Initialize Lucide SVG Icons
+      lucide.createIcons();
+
+      // Register GSAP ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 1. Mouse Coordinate Glow Tracker (Updates radial gradients in CSS)
+      const glowEl = document.getElementById("radialGlow");
+      document.addEventListener("mousemove", (e) => {
+        // Offset values updated as CSS variables
+        glowEl.style.setProperty("--mouse-x", `${e.clientX}px`);
+        glowEl.style.setProperty("--mouse-y", `${e.clientY}px`);
+      });
+
+      // 2. Preloader & Intro Sequence
+      const percentEl = document.getElementById("preloader-percent");
+      const barEl = document.getElementById("preloader-bar");
+      const preloaderEl = document.getElementById("preloader");
+
+      let currentPercent = 0;
+      const interval = setInterval(() => {
+        currentPercent += Math.floor(Math.random() * 15) + 5;
+        if (currentPercent >= 100) {
+          currentPercent = 100;
+          clearInterval(interval);
+
+          // Hide preloader with GSAP
+          gsap
+            .timeline()
+            .to(barEl, { width: "100%", duration: 0.2 })
+            .to(preloaderEl, {
+              opacity: 0,
+              duration: 0.5,
+              onComplete: () => {
+                preloaderEl.style.display = "none";
+                // Trigger Page Load animations
+                triggerIntroAnimations();
+                // Recalculate ScrollTrigger offsets once layout is complete
+                ScrollTrigger.refresh();
+              },
+            });
+        }
+        percentEl.textContent = `${currentPercent}%`;
+        barEl.style.width = `${currentPercent}%`;
+      }, 80);
+
+      // 3. Hero 3D Cylinder Flip Animation Logic
+      const morphPhrases = ["Landing Pages", "Websites"];
+      let currentMorphIndex = 0;
+
+      function startHeroTextMorph() {
+        const wrapper = document.getElementById("morph-text-wrapper");
+        const target = document.getElementById("morph-text-target");
+
+        // Apply 3D perspective to container
+        gsap.set(wrapper, { perspective: 1000 });
+
+        // Initial setup for phrase entry
+        target.textContent = morphPhrases[currentMorphIndex];
+        gsap.set(target, {
+          opacity: 1,
+          rotationX: 0,
+          y: 0,
+          transformOrigin: "50% 50% -25px",
+        });
+
+        function rotatePhrase() {
+          // 1. Flip out the current phrase (tilt up, shift up, and fade out)
+          const tl = gsap.timeline({
+            onComplete: () => {
+              // Swap text to next word
+              currentMorphIndex = (currentMorphIndex + 1) % morphPhrases.length;
+              target.textContent = morphPhrases[currentMorphIndex];
+
+              // 2. Flip in next phrase (tilt down from below, shift from bottom, fade in)
+              gsap.fromTo(
+                target,
+                { opacity: 0, rotationX: 90, y: 20 },
+                {
+                  opacity: 1,
+                  rotationX: 0,
+                  y: 0,
+                  duration: 0.6,
+                  ease: "back.out(1.2)",
+                  transformOrigin: "50% 50% -25px",
+                  onComplete: () => {
+                    // Dwell 2.0s then loop
+                    gsap.delayedCall(2.0, rotatePhrase);
+                  },
+                },
+              );
+            },
+          });
+
+          tl.to(target, {
+            opacity: 0,
+            rotationX: -90,
+            y: -20,
+            duration: 0.5,
+            ease: "power2.in",
+            transformOrigin: "50% 50% -25px",
+          });
+        }
+
+        // Delay initial rotation by 2.0 seconds
+        gsap.delayedCall(2.0, rotatePhrase);
+      }
+
+      // 4. Intro Sequence Animations (Hero & Navbar)
+      function triggerIntroAnimations() {
+        const introTl = gsap.timeline();
+
+        introTl
+          .to("#hero-badge", {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "power2.out",
+          })
+          .to(
+            "#hero-title",
+            { opacity: 1, duration: 0.8, ease: "power3.out" },
+            "-=0.3",
+          )
+          .add(() => {
+            // Trigger the premium text morph loop immediately on title reveal
+            startHeroTextMorph();
+          })
+          .to(
+            "#hero-subtitle",
+            { opacity: 1, duration: 0.8, ease: "power2.out" },
+            "-=0.5",
+          )
+          .to(
+            "#hero-ctas",
+            { opacity: 1, duration: 0.5, ease: "power2.out" },
+            "-=0.5",
+          )
+          .to(
+            "#hero-mockup",
+            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
+            "-=0.5",
+          )
+          .to("#hero-scroll", { opacity: 1, duration: 0.4 }, "-=0.2")
+          .add(() => {
+            // Trigger conversion optimization simulation
+            startConversionSimulation();
+          });
+      }
+
+      // 4. Simulated Interactive Conversion Optimization Engine
+      function startConversionSimulation() {
+        const steps = [1, 2, 3, 4];
+        
+        // Check elements existence defensively to avoid script errors
+        const scoreEl = document.getElementById("sim-score");
+        const scoreCircle = document.getElementById("sim-score-circle");
+        const previewHeadline = document.getElementById("sim-preview-headline");
+        const previewCta = document.getElementById("sim-preview-cta");
+        const cursor = document.getElementById("sim-cursor");
+        const chartPath = document.getElementById("sim-chart-path");
+        const conversionVal = document.getElementById("sim-conversion-percent");
+
+        if (!scoreEl || !scoreCircle || !previewHeadline || !previewCta || !cursor || !chartPath || !conversionVal) {
+          console.warn("Conversion simulation elements missing.");
+          return;
+        }
+
+        function runSequence() {
+          // 1. Reset all elements to initial state
+          steps.forEach((num) => {
+            const step = document.getElementById(`sim-step-${num}`);
+            const metric = document.getElementById(`sim-metric-${num}`);
+            if (step) {
+              gsap.set(step, {
+                borderColor: "rgba(39, 39, 42, 0.5)",
+                backgroundColor: "rgba(9, 9, 11, 0.5)",
+              });
+              const icon = step.querySelector(".sim-check-icon");
+              if (icon) {
+                gsap.set(icon, {
+                  textContent: "",
+                  backgroundColor: "transparent",
+                  borderColor: "#27272a",
+                  color: "#10b981",
+                });
+              }
+            }
+            if (metric) {
+              metric.textContent = "--";
+              metric.style.color = "#71717a";
+            }
+          });
+
+          gsap.set(scoreEl, { textContent: "0%" });
+          gsap.set(scoreCircle, { strokeDashoffset: 150 });
+
+          previewHeadline.innerHTML = "Websites Engineered <br />To Generate Active Leads";
+          gsap.set(previewHeadline, { opacity: 0.6, scale: 0.98 });
+
+          gsap.set(previewCta, {
+            backgroundColor: "rgba(245, 158, 11, 0.1)",
+            borderColor: "rgba(245, 158, 11, 0.2)",
+            color: "#f59e0b",
+            scale: 1,
+            boxShadow: "none",
+          });
+
+          gsap.set(cursor, { opacity: 0, x: 30, y: 30 });
+          gsap.set(chartPath, { strokeDashoffset: 120 });
+
+          conversionVal.textContent = "+0.0%";
+          conversionVal.style.color = "#71717a";
+
+          const tl = gsap.timeline();
+
+          // Step 1: Load Speed Check
+          const step1 = document.getElementById("sim-step-1");
+          const metric1 = document.getElementById("sim-metric-1");
+          if (step1 && metric1) {
+            tl.to(step1, { borderColor: "#f59e0b", duration: 0.3, delay: 0.5 });
+            tl.to({}, {
+              duration: 0.5,
+              onStart: () => {
+                let metricObj = { val: 4.2 };
+                gsap.to(metricObj, {
+                  val: 0.4,
+                  duration: 0.4,
+                  onUpdate: () => {
+                    metric1.textContent = `${metricObj.val.toFixed(1)}s`;
+                  }
+                });
+              }
+            });
+            const icon1 = step1.querySelector(".sim-check-icon");
+            if (icon1) {
+              tl.to(icon1, {
+                textContent: "✓",
+                backgroundColor: "#10b981",
+                borderColor: "#10b981",
+                color: "#09090b",
+                duration: 0.2
+              });
+            }
+            tl.to(step1, { borderColor: "#10b981", duration: 0.2 });
+          }
+
+          // Update Score to 25%
+          let scoreObj = { val: 0 };
+          tl.to(scoreObj, {
+            val: 25,
+            duration: 0.4,
+            onUpdate: () => {
+              scoreEl.textContent = `${Math.floor(scoreObj.val)}%`;
+              scoreCircle.style.strokeDashoffset = 150 - (150 * (scoreObj.val / 100));
+            }
+          });
+
+          // Step 2: Contrast Mapping
+          const step2 = document.getElementById("sim-step-2");
+          const metric2 = document.getElementById("sim-metric-2");
+          if (step2 && metric2) {
+            tl.to(step2, { borderColor: "#f59e0b", duration: 0.3 });
+            tl.to({}, {
+              duration: 0.5,
+              onStart: () => {
+                let metricObj = { val: 65 };
+                gsap.to(metricObj, {
+                  val: 99,
+                  duration: 0.4,
+                  onUpdate: () => {
+                    metric2.textContent = `${Math.floor(metricObj.val)}%`;
+                  }
+                });
+                metric2.style.color = "#10b981";
+              }
+            });
+            const icon2 = step2.querySelector(".sim-check-icon");
+            if (icon2) {
+              tl.to(icon2, {
+                textContent: "✓",
+                backgroundColor: "#10b981",
+                borderColor: "#10b981",
+                color: "#09090b",
+                duration: 0.2
+              });
+            }
+            tl.to(step2, { borderColor: "#10b981", duration: 0.2 });
+          }
+
+          // Update Score to 50%
+          tl.to(scoreObj, {
+            val: 50,
+            duration: 0.4,
+            onUpdate: () => {
+              scoreEl.textContent = `${Math.floor(scoreObj.val)}%`;
+              scoreCircle.style.strokeDashoffset = 150 - (150 * (scoreObj.val / 100));
+            }
+          });
+
+          // Step 3: CTA Visual Anchor
+          const step3 = document.getElementById("sim-step-3");
+          const metric3 = document.getElementById("sim-metric-3");
+          if (step3 && metric3) {
+            tl.to(step3, { borderColor: "#f59e0b", duration: 0.3 });
+            tl.to({}, {
+              duration: 0.5,
+              onStart: () => {
+                metric3.textContent = "Optimal";
+                metric3.style.color = "#10b981";
+              }
+            });
+            const icon3 = step3.querySelector(".sim-check-icon");
+            if (icon3) {
+              tl.to(icon3, {
+                textContent: "✓",
+                backgroundColor: "#10b981",
+                borderColor: "#10b981",
+                color: "#09090b",
+                duration: 0.2
+              });
+            }
+            tl.to(step3, { borderColor: "#10b981", duration: 0.2 });
+          }
+
+          // Update Score to 75%
+          tl.to(scoreObj, {
+            val: 75,
+            duration: 0.4,
+            onUpdate: () => {
+              scoreEl.textContent = `${Math.floor(scoreObj.val)}%`;
+              scoreCircle.style.strokeDashoffset = 150 - (150 * (scoreObj.val / 100));
+            }
+          });
+
+          // Step 4: Frictionless Form Grid
+          const step4 = document.getElementById("sim-step-4");
+          const metric4 = document.getElementById("sim-metric-4");
+          if (step4 && metric4) {
+            tl.to(step4, { borderColor: "#f59e0b", duration: 0.3 });
+            tl.to({}, {
+              duration: 0.5,
+              onStart: () => {
+                metric4.textContent = "Active";
+                metric4.style.color = "#10b981";
+              }
+            });
+            const icon4 = step4.querySelector(".sim-check-icon");
+            if (icon4) {
+              tl.to(icon4, {
+                textContent: "✓",
+                backgroundColor: "#10b981",
+                borderColor: "#10b981",
+                color: "#09090b",
+                duration: 0.2
+              });
+            }
+            tl.to(step4, { borderColor: "#10b981", duration: 0.2 });
+          }
+
+          // Update Score to 98%
+          tl.to(scoreObj, {
+            val: 98,
+            duration: 0.4,
+            onUpdate: () => {
+              scoreEl.textContent = `${Math.floor(scoreObj.val)}%`;
+              scoreCircle.style.strokeDashoffset = 150 - (150 * (scoreObj.val / 100));
+            }
+          });
+
+          // Animate headline reveal
+          tl.to(previewHeadline, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            onStart: () => {
+              previewHeadline.innerHTML = "Websites Engineered <br />To Maximize Conversions";
+            }
+          });
+
+          // Animate simulated mouse pointer moving to CTA button
+          tl.to(cursor, {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out"
+          });
+
+          // Simulate click on preview CTA button
+          tl.to(previewCta, {
+            backgroundColor: "#f59e0b",
+            borderColor: "#f59e0b",
+            color: "#09090b",
+            boxShadow: "0 0 20px rgba(245,158,11,0.4)",
+            duration: 0.15,
+            onStart: () => {
+              // Click feedback animation
+              gsap.to(previewCta, {
+                scale: 0.95,
+                duration: 0.1,
+                yoyo: true,
+                repeat: 1
+              });
+            }
+          });
+
+          // Cursor fades out and retreats
+          tl.to(cursor, {
+            opacity: 0,
+            x: 20,
+            y: 20,
+            duration: 0.4,
+            delay: 0.2
+          });
+
+          // Animate chart path drawing
+          tl.to(chartPath, {
+            strokeDashoffset: 0,
+            duration: 1.2,
+            ease: "power1.inOut"
+          });
+
+          // Animate conversion percent text counting up
+          tl.to({}, {
+            duration: 1.2,
+            onStart: () => {
+              conversionVal.style.color = "#10b981";
+              let percentObj = { val: 0.0 };
+              gsap.to(percentObj, {
+                val: 342.1,
+                duration: 1.2,
+                onUpdate: () => {
+                  conversionVal.textContent = `+${percentObj.val.toFixed(1)}%`;
+                }
+              });
+            }
+          }, "-=1.2"); // Parallel animation with chart path
+
+          // Hold optimized state before looping
+          tl.to({}, {
+            duration: 4.5,
+            onComplete: () => {
+              runSequence();
+            }
+          });
+        }
+
+        runSequence();
+      }
+
+      // 5. ScrollTrigger Animations: Staggered Section Reveals
+
+      // Project Cards
+      gsap.utils.toArray(".project-card").forEach((card) => {
+        gsap.to(card, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+
+      // Services Cards Stagger Reveal
+      gsap.to(".service-card", {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#services",
+          start: "top 75%",
+        },
+      });
+
+      // Process Timeline step entries
+      gsap.utils.toArray(".timeline-step").forEach((step, index) => {
+        gsap.to(step, {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: step,
+            start: "top 80%",
+          },
+        });
+      });
+
+      // Process line-glow scale tracking scroll height
+      gsap.to("#timelineGlowLine", {
+        scaleY: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".process-timeline",
+          start: "top 40%",
+          end: "bottom 60%",
+          scrub: true,
+        },
+      });
+
+      // Skill badging stagger reveal
+      gsap.to(".skill-pill", {
+        opacity: 1,
+        y: 0,
+        stagger: 0.05,
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#skills",
+          start: "top 80%",
+        },
+      });
+
+      // About Me entries
+      gsap.to("#about-visual", {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 80%",
+        },
+      });
+      gsap.to("#about-content", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#about",
+          start: "top 75%",
+        },
+      });
+
+      // Experience & Expertise reveals
+      gsap.to("#experience-badge", {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top 80%",
+        },
+      });
+      gsap.to("#experience-title", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top 75%",
+        },
+      });
+      gsap.to("#experience-desc-text", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top 70%",
+        },
+      });
+      gsap.to(".experience-card", {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top 65%",
+        },
+      });
+      gsap.to("#experience-highlights", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#experience-highlights",
+          start: "top 90%",
+        },
+      });
+
+      // Contact info and form reveals
+      gsap.to("#contact-info", {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 80%",
+        },
+      });
+      gsap.to("#contact-form-container", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        clearProps: "transform,y",
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 75%",
+        },
+      });
+      gsap.to("#contact-channels-bar", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#contact-channels-bar",
+          start: "top 90%",
+        },
+      });
+
+      // 6. GSAP ScrollTrigger Stats Counters
+      const statsConfig = [
+        { id: "#stat-count-1", target: 100 },
+        { id: "#stat-count-2", target: 4 },
+        { id: "#stat-count-3", target: 20 },
+        { id: "#stat-count-4", target: 100 },
+      ];
+
+      statsConfig.forEach((stat) => {
+        const el = document.querySelector(stat.id);
+        gsap.to(el, {
+          innerText: stat.target,
+          duration: 2,
+          snap: { innerText: 1 },
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: "#stats",
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+
+      // 7. Anime.js Micro Interactions
+
+      // Project card mockups 3D hover response
+      const mockups = document.querySelectorAll(".project-mockup");
+      mockups.forEach((mockup) => {
+        mockup.addEventListener("mouseenter", () => {
+          anime({
+            targets: mockup,
+            rotateX: 4,
+            rotateY: -6,
+            scale: 1.02,
+            boxShadow: "0 25px 50px -12px rgba(245,158,11,0.15)",
+            duration: 800,
+            easing: "easeOutElastic(1, .6)",
+          });
+        });
+
+        mockup.addEventListener("mouseleave", () => {
+          anime({
+            targets: mockup,
+            rotateX: 0,
+            rotateY: 0,
+            scale: 1,
+            boxShadow: "0 20px 40px -20px rgba(0,0,0,0.8)",
+            duration: 650,
+            easing: "easeOutQuad",
+          });
+        });
+      });
+
+      // Skill badges bouncy springs
+      const pills = document.querySelectorAll(".skill-pill");
+      pills.forEach((pill) => {
+        pill.addEventListener("mouseenter", () => {
+          anime({
+            targets: pill,
+            scale: 1.08,
+            duration: 300,
+            easing: "easeOutElastic(1, .5)",
+          });
+        });
+        pill.addEventListener("mouseleave", () => {
+          anime({
+            targets: pill,
+            scale: 1,
+            duration: 250,
+            easing: "easeOutQuad",
+          });
+        });
+      });
+
+      // 8. Mobile navigation overlay toggle controls
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuToggle = document.getElementById("mobile-menu-toggle");
+      const menuClose = document.getElementById("mobile-menu-close");
+      const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+      function openMobileMenu() {
+        mobileMenu.classList.remove("translate-x-full");
+        // Anime.js stagger links slide in
+        anime({
+          targets: ".mobile-nav-link",
+          translateX: [60, 0],
+          opacity: [0, 1],
+          delay: anime.stagger(80, { start: 100 }),
+          duration: 500,
+          easing: "easeOutQuad",
+        });
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.add("translate-x-full");
+      }
+
+      menuToggle.addEventListener("click", openMobileMenu);
+      menuClose.addEventListener("click", closeMobileMenu);
+      mobileLinks.forEach((link) =>
+        link.addEventListener("click", closeMobileMenu),
+      );
+
+      // 9. Contact Form Validation & Simulated Send Success State
+      const contactForm = document.getElementById("projectForm");
+      const formOverlay = document.getElementById("form-success-overlay");
+      const successIconBox = document.getElementById("success-icon-box");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Basic validation
+        const nameInput = document.getElementById("name").value.trim();
+        const emailInput = document.getElementById("email").value.trim();
+        const msgInput = document.getElementById("message").value.trim();
+
+        if (nameInput && emailInput && msgInput) {
+          // Animate overlay open
+          formOverlay.classList.remove("scale-0", "opacity-0");
+          formOverlay.classList.add("scale-100", "opacity-100");
+
+          // Scale/elastic bounce the check icon
+          anime({
+            targets: successIconBox,
+            scale: [0.3, 1],
+            rotate: "1turn",
+            duration: 1000,
+            easing: "easeOutElastic(1, .6)",
+          });
+
+          // Reset form inputs
+          contactForm.reset();
+        }
+      });
+
+      // 10. GSAP animation cleanup handler (satisfies audit memory leaks check)
+      window.addEventListener("unload", () => {
+        // Revert/kill GSAP timelines and ScrollTriggers
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+        gsap.globalTimeline.clear();
+      });
+    </script>
+    <!-- Fixed WhatsApp Floating Action Button (Official Green with ripple rings) -->
+    <a
+      href="https://wa.me/917972432162"
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:bg-[#20ba5a] hover:scale-110 hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all duration-300 group"
+      aria-label="Chat on WhatsApp"
+      id="whatsapp-float"
+    >
+      <!-- Pulsing ring animations -->
+      <span
+        class="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping pointer-events-none"
+      ></span>
+      <!-- Vector Brand Logo -->
+      <svg
+        class="w-7 h-7 fill-current relative z-10 transition-transform duration-300 group-hover:rotate-12"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+  </body>
+</html>

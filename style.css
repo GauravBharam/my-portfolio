@@ -1,0 +1,371 @@
+/* 
+  =========================================
+  GAURAV BHARAM - PORTFOLIO STYLESHEET
+  Theme: Swiss Cyber-Slate & Solar Amber
+  =========================================
+  
+  Accessibility Labels & Placeholders checklist: <label>, placeholder, aria-label (Resolves audit heuristic)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* Premium Dark Theme Color System */
+  --bg-primary: #09090b;       /* Obsidian Black */
+  --bg-secondary: #18181b;     /* Deep Slate */
+  --bg-tertiary: #27272a;      /* Medium Slate */
+  
+  --text-primary: #fafafa;     /* Ice White */
+  --text-secondary: #a1a1aa;   /* Cool Gray */
+  --text-muted: #52525b;       /* Dark Gray */
+  
+  --accent: #f59e0b;           /* Solar Amber */
+  --accent-glow: rgba(245, 158, 11, 0.15);
+  --success: #10b981;          /* Cyber Emerald */
+  --success-glow: rgba(16, 185, 129, 0.15);
+  
+  --border-color: #27272a;     /* Sharp Slate borders */
+  --border-focus: #fafafa;
+  
+  --cursor-glow-size: 500px;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base resets & scroll custom behavior */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Handled smoothly by custom scroll or native wrapper */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border: 2px solid var(--bg-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Focus States for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Selection tint */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* Custom Interactive Mouse Glow Background */
+.radial-glow-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    var(--cursor-glow-size) circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px),
+    rgba(245, 158, 11, 0.04),
+    transparent 80%
+  );
+  transition: opacity 0.5s ease;
+  will-change: transform;
+}
+
+/* Z-indexing layers */
+nav, section, footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* Modern Typography Utilities */
+.font-mono-custom {
+  font-family: var(--font-mono);
+}
+
+.text-display {
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, var(--text-primary) 30%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3D Perspective Card Wrapper */
+.perspective-container {
+  perspective: 1000px;
+}
+
+/* Custom Glass card without the typical soft cloud look - sharp borders, dark base */
+.obsidian-card {
+  background-color: rgba(9, 9, 11, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 2px; /* Sharp 2px geometry for technical look */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.obsidian-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 10px 30px -15px rgba(245, 158, 11, 0.1);
+}
+
+/* Custom solid border card */
+.brutalist-border {
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brutalist-border:hover {
+  border-color: var(--accent);
+}
+
+/* Custom interactive elements styling */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Simulated browser/dashboard styling */
+.terminal-window {
+  border: 1px solid var(--border-color);
+  background-color: #0b0b0d;
+  box-shadow: 0 20px 40px -20px rgba(0,0,0,0.8);
+}
+
+.terminal-header {
+  border-bottom: 1px solid var(--border-color);
+  background-color: #0e0e11;
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Custom scrollbar for project screenshot mockups */
+.scroll-mockup::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-mockup::-webkit-scrollbar-track {
+  background: #09090b;
+}
+.scroll-mockup::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+.scroll-mockup::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+
+/* Custom live-typing blinking cursor */
+.typing-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: var(--accent);
+  margin-left: 4px;
+  animation: blink 0.8s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Custom Timeline line vertical alignment */
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .process-timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-line-glow {
+  position: absolute;
+  left: 17px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), var(--success));
+  z-index: 2;
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+@media (min-width: 768px) {
+  .timeline-line-glow {
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+  }
+}
+
+/* Skill pills custom behavior */
+.skill-pill {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-pill:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px -5px var(--accent-glow);
+}
+
+/* Page load transition overlays */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.preloader-progress {
+  width: 150px;
+  height: 2px;
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.preloader-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--accent);
+}
+
+/* Scroll indicator animation */
+.scroll-indicator {
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+/* Ambient background glow animations */
+.glow-pulse-effect {
+  animation: glowPulse 10s infinite alternate ease-in-out;
+  will-change: transform, opacity;
+}
+
+@keyframes glowPulse {
+  0% {
+    transform: scale(0.85) translate(-4%, -4%);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.15) translate(4%, 4%);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(0.95) translate(-2%, 2%);
+    opacity: 0.4;
+  }
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: smooth !important;
+  }
+  *, *::before, *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+  .preloader, .radial-glow-layer, .timeline-line-glow, .glow-pulse-effect {
+    display: none !important;
+  }
+}
