@@ -146,7 +146,7 @@
         <!-- Action Button -->
         <div class="hidden md:block">
           <a
-            class="px-5 py-2.5 text-xs font-mono font-bold tracking-wider bg-transparent border border-zinc-800 text-zinc-200 hover:border-solar hover:text-solar hover:shadow-[0_0_15px_rgba(245,158,11,0.1)] transition-all duration-300 rounded-xs"
+            class="px-5 py-2.5 text-xs font-mono font-bold tracking-wider bg-transparent border border-solar text-solar hover:shadow-[0_0_15px_rgba(245,158,11,0.1)] transition-all duration-300 rounded-xs"
             href="#contact"
           >
             Let's Talk
@@ -926,9 +926,10 @@
               Bright Smile Dental Clinic
             </h3>
             <p class="text-zinc-400 mt-4 text-sm leading-relaxed max-w-[65ch]">
-              A high-converting dental practice landing page engineered to drive patient acquisitions. 
-              Features conversion-optimized design elements, integrated appointment scheduling pathways, 
-              and an interactive, responsive showcase of dental services.
+              A high-converting dental practice landing page engineered to drive
+              patient acquisitions. Features conversion-optimized design
+              elements, integrated appointment scheduling pathways, and an
+              interactive, responsive showcase of dental services.
             </p>
             <!-- Tech Pills -->
             <div class="flex flex-wrap gap-2 mt-6">
@@ -961,9 +962,10 @@
               Luxury Car Showcase
             </h3>
             <p class="text-zinc-400 mt-4 text-sm leading-relaxed max-w-[65ch]">
-              An immersive product showcase designed to launch a premium electric SUV. 
-              Leverages advanced scroll-driven animations using GSAP and Anime.js, 
-              high-fidelity media layouts, and cinematic visual flow to maximize user engagement.
+              An immersive product showcase designed to launch a premium
+              electric SUV. Leverages advanced scroll-driven animations using
+              GSAP and Anime.js, high-fidelity media layouts, and cinematic
+              visual flow to maximize user engagement.
             </p>
             <!-- Tech Pills -->
             <div class="flex flex-wrap gap-2 mt-6">
@@ -1054,9 +1056,10 @@
               Smart Lockers Website
             </h3>
             <p class="text-zinc-400 mt-4 text-sm leading-relaxed max-w-[65ch]">
-              A modern marketing and product exploration website designed for a leading smart locker manufacturer. 
-              Features smooth dynamic interactions, detailed structural product breakdowns, 
-              and conversion-focused inquiry paths for B2B clients.
+              A modern marketing and product exploration website designed for a
+              leading smart locker manufacturer. Features smooth dynamic
+              interactions, detailed structural product breakdowns, and
+              conversion-focused inquiry paths for B2B clients.
             </p>
             <!-- Tech Pills -->
             <div class="flex flex-wrap gap-2 mt-6">
@@ -1089,9 +1092,10 @@
               Healthcare Website
             </h3>
             <p class="text-zinc-400 mt-4 text-sm leading-relaxed max-w-[65ch]">
-              A professional digital platform designed to streamline healthcare provider navigation. 
-              Incorporates dynamic patient portals, structured medical service directories, 
-              and responsive layouts optimized for fast, secure patient interactions.
+              A professional digital platform designed to streamline healthcare
+              provider navigation. Incorporates dynamic patient portals,
+              structured medical service directories, and responsive layouts
+              optimized for fast, secure patient interactions.
             </p>
             <!-- Tech Pills -->
             <div class="flex flex-wrap gap-2 mt-6">
@@ -2312,7 +2316,7 @@
       // 4. Simulated Interactive Conversion Optimization Engine
       function startConversionSimulation() {
         const steps = [1, 2, 3, 4];
-        
+
         // Check elements existence defensively to avoid script errors
         const scoreEl = document.getElementById("sim-score");
         const scoreCircle = document.getElementById("sim-score-circle");
@@ -2322,7 +2326,15 @@
         const chartPath = document.getElementById("sim-chart-path");
         const conversionVal = document.getElementById("sim-conversion-percent");
 
-        if (!scoreEl || !scoreCircle || !previewHeadline || !previewCta || !cursor || !chartPath || !conversionVal) {
+        if (
+          !scoreEl ||
+          !scoreCircle ||
+          !previewHeadline ||
+          !previewCta ||
+          !cursor ||
+          !chartPath ||
+          !conversionVal
+        ) {
           console.warn("Conversion simulation elements missing.");
           return;
         }
@@ -2356,7 +2368,8 @@
           gsap.set(scoreEl, { textContent: "0%" });
           gsap.set(scoreCircle, { strokeDashoffset: 150 });
 
-          previewHeadline.innerHTML = "Websites Engineered <br />To Generate Active Leads";
+          previewHeadline.innerHTML =
+            "Websites Engineered <br />To Generate Active Leads";
           gsap.set(previewHeadline, { opacity: 0.6, scale: 0.98 });
 
           gsap.set(previewCta, {
@@ -2380,19 +2393,22 @@
           const metric1 = document.getElementById("sim-metric-1");
           if (step1 && metric1) {
             tl.to(step1, { borderColor: "#f59e0b", duration: 0.3, delay: 0.5 });
-            tl.to({}, {
-              duration: 0.5,
-              onStart: () => {
-                let metricObj = { val: 4.2 };
-                gsap.to(metricObj, {
-                  val: 0.4,
-                  duration: 0.4,
-                  onUpdate: () => {
-                    metric1.textContent = `${metricObj.val.toFixed(1)}s`;
-                  }
-                });
-              }
-            });
+            tl.to(
+              {},
+              {
+                duration: 0.5,
+                onStart: () => {
+                  let metricObj = { val: 4.2 };
+                  gsap.to(metricObj, {
+                    val: 0.4,
+                    duration: 0.4,
+                    onUpdate: () => {
+                      metric1.textContent = `${metricObj.val.toFixed(1)}s`;
+                    },
+                  });
+                },
+              },
+            );
             const icon1 = step1.querySelector(".sim-check-icon");
             if (icon1) {
               tl.to(icon1, {
@@ -2400,7 +2416,7 @@
                 backgroundColor: "#10b981",
                 borderColor: "#10b981",
                 color: "#09090b",
-                duration: 0.2
+                duration: 0.2,
               });
             }
             tl.to(step1, { borderColor: "#10b981", duration: 0.2 });
@@ -2413,8 +2429,9 @@
             duration: 0.4,
             onUpdate: () => {
               scoreEl.textContent = `${Math.floor(scoreObj.val)}%`;
-              scoreCircle.style.strokeDashoffset = 150 - (150 * (scoreObj.val / 100));
-            }
+              scoreCircle.style.strokeDashoffset =
+                150 - 150 * (scoreObj.val / 100);
+            },
           });
 
           // Step 2: Contrast Mapping
@@ -2422,20 +2439,23 @@
           const metric2 = document.getElementById("sim-metric-2");
           if (step2 && metric2) {
             tl.to(step2, { borderColor: "#f59e0b", duration: 0.3 });
-            tl.to({}, {
-              duration: 0.5,
-              onStart: () => {
-                let metricObj = { val: 65 };
-                gsap.to(metricObj, {
-                  val: 99,
-                  duration: 0.4,
-                  onUpdate: () => {
-                    metric2.textContent = `${Math.floor(metricObj.val)}%`;
-                  }
-                });
-                metric2.style.color = "#10b981";
-              }
-            });
+            tl.to(
+              {},
+              {
+                duration: 0.5,
+                onStart: () => {
+                  let metricObj = { val: 65 };
+                  gsap.to(metricObj, {
+                    val: 99,
+                    duration: 0.4,
+                    onUpdate: () => {
+                      metric2.textContent = `${Math.floor(metricObj.val)}%`;
+                    },
+                  });
+                  metric2.style.color = "#10b981";
+                },
+              },
+            );
             const icon2 = step2.querySelector(".sim-check-icon");
             if (icon2) {
               tl.to(icon2, {
@@ -2443,7 +2463,7 @@
                 backgroundColor: "#10b981",
                 borderColor: "#10b981",
                 color: "#09090b",
-                duration: 0.2
+                duration: 0.2,
               });
             }
             tl.to(step2, { borderColor: "#10b981", duration: 0.2 });
@@ -2455,8 +2475,9 @@
             duration: 0.4,
             onUpdate: () => {
               scoreEl.textContent = `${Math.floor(scoreObj.val)}%`;
-              scoreCircle.style.strokeDashoffset = 150 - (150 * (scoreObj.val / 100));
-            }
+              scoreCircle.style.strokeDashoffset =
+                150 - 150 * (scoreObj.val / 100);
+            },
           });
 
           // Step 3: CTA Visual Anchor
@@ -2464,13 +2485,16 @@
           const metric3 = document.getElementById("sim-metric-3");
           if (step3 && metric3) {
             tl.to(step3, { borderColor: "#f59e0b", duration: 0.3 });
-            tl.to({}, {
-              duration: 0.5,
-              onStart: () => {
-                metric3.textContent = "Optimal";
-                metric3.style.color = "#10b981";
-              }
-            });
+            tl.to(
+              {},
+              {
+                duration: 0.5,
+                onStart: () => {
+                  metric3.textContent = "Optimal";
+                  metric3.style.color = "#10b981";
+                },
+              },
+            );
             const icon3 = step3.querySelector(".sim-check-icon");
             if (icon3) {
               tl.to(icon3, {
@@ -2478,7 +2502,7 @@
                 backgroundColor: "#10b981",
                 borderColor: "#10b981",
                 color: "#09090b",
-                duration: 0.2
+                duration: 0.2,
               });
             }
             tl.to(step3, { borderColor: "#10b981", duration: 0.2 });
@@ -2490,8 +2514,9 @@
             duration: 0.4,
             onUpdate: () => {
               scoreEl.textContent = `${Math.floor(scoreObj.val)}%`;
-              scoreCircle.style.strokeDashoffset = 150 - (150 * (scoreObj.val / 100));
-            }
+              scoreCircle.style.strokeDashoffset =
+                150 - 150 * (scoreObj.val / 100);
+            },
           });
 
           // Step 4: Frictionless Form Grid
@@ -2499,13 +2524,16 @@
           const metric4 = document.getElementById("sim-metric-4");
           if (step4 && metric4) {
             tl.to(step4, { borderColor: "#f59e0b", duration: 0.3 });
-            tl.to({}, {
-              duration: 0.5,
-              onStart: () => {
-                metric4.textContent = "Active";
-                metric4.style.color = "#10b981";
-              }
-            });
+            tl.to(
+              {},
+              {
+                duration: 0.5,
+                onStart: () => {
+                  metric4.textContent = "Active";
+                  metric4.style.color = "#10b981";
+                },
+              },
+            );
             const icon4 = step4.querySelector(".sim-check-icon");
             if (icon4) {
               tl.to(icon4, {
@@ -2513,7 +2541,7 @@
                 backgroundColor: "#10b981",
                 borderColor: "#10b981",
                 color: "#09090b",
-                duration: 0.2
+                duration: 0.2,
               });
             }
             tl.to(step4, { borderColor: "#10b981", duration: 0.2 });
@@ -2525,8 +2553,9 @@
             duration: 0.4,
             onUpdate: () => {
               scoreEl.textContent = `${Math.floor(scoreObj.val)}%`;
-              scoreCircle.style.strokeDashoffset = 150 - (150 * (scoreObj.val / 100));
-            }
+              scoreCircle.style.strokeDashoffset =
+                150 - 150 * (scoreObj.val / 100);
+            },
           });
 
           // Animate headline reveal
@@ -2535,8 +2564,9 @@
             scale: 1,
             duration: 0.4,
             onStart: () => {
-              previewHeadline.innerHTML = "Websites Engineered <br />To Maximize Conversions";
-            }
+              previewHeadline.innerHTML =
+                "Websites Engineered <br />To Maximize Conversions";
+            },
           });
 
           // Animate simulated mouse pointer moving to CTA button
@@ -2545,7 +2575,7 @@
             x: 0,
             y: 0,
             duration: 0.8,
-            ease: "power2.out"
+            ease: "power2.out",
           });
 
           // Simulate click on preview CTA button
@@ -2561,9 +2591,9 @@
                 scale: 0.95,
                 duration: 0.1,
                 yoyo: true,
-                repeat: 1
+                repeat: 1,
               });
-            }
+            },
           });
 
           // Cursor fades out and retreats
@@ -2572,39 +2602,46 @@
             x: 20,
             y: 20,
             duration: 0.4,
-            delay: 0.2
+            delay: 0.2,
           });
 
           // Animate chart path drawing
           tl.to(chartPath, {
             strokeDashoffset: 0,
             duration: 1.2,
-            ease: "power1.inOut"
+            ease: "power1.inOut",
           });
 
           // Animate conversion percent text counting up
-          tl.to({}, {
-            duration: 1.2,
-            onStart: () => {
-              conversionVal.style.color = "#10b981";
-              let percentObj = { val: 0.0 };
-              gsap.to(percentObj, {
-                val: 342.1,
-                duration: 1.2,
-                onUpdate: () => {
-                  conversionVal.textContent = `+${percentObj.val.toFixed(1)}%`;
-                }
-              });
-            }
-          }, "-=1.2"); // Parallel animation with chart path
+          tl.to(
+            {},
+            {
+              duration: 1.2,
+              onStart: () => {
+                conversionVal.style.color = "#10b981";
+                let percentObj = { val: 0.0 };
+                gsap.to(percentObj, {
+                  val: 342.1,
+                  duration: 1.2,
+                  onUpdate: () => {
+                    conversionVal.textContent = `+${percentObj.val.toFixed(1)}%`;
+                  },
+                });
+              },
+            },
+            "-=1.2",
+          ); // Parallel animation with chart path
 
           // Hold optimized state before looping
-          tl.to({}, {
-            duration: 4.5,
-            onComplete: () => {
-              runSequence();
-            }
-          });
+          tl.to(
+            {},
+            {
+              duration: 4.5,
+              onComplete: () => {
+                runSequence();
+              },
+            },
+          );
         }
 
         runSequence();
