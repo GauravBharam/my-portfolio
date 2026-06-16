@@ -2904,21 +2904,38 @@
         const msgInput = document.getElementById("message").value.trim();
 
         if (nameInput && emailInput && msgInput) {
-          // Animate overlay open
-          formOverlay.classList.remove("scale-0", "opacity-0");
-          formOverlay.classList.add("scale-100", "opacity-100");
+          // Send form data to FormSubmit
+          fetch("https://formsubmit.co/ajax/gauravbharam7972@gmail.com", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              name: nameInput,
+              email: emailInput,
+              message: msgInput,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Animate overlay open
+              formOverlay.classList.remove("scale-0", "opacity-0");
+              formOverlay.classList.add("scale-100", "opacity-100");
 
-          // Scale/elastic bounce the check icon
-          anime({
-            targets: successIconBox,
-            scale: [0.3, 1],
-            rotate: "1turn",
-            duration: 1000,
-            easing: "easeOutElastic(1, .6)",
-          });
+              // Scale/elastic bounce the check icon
+              anime({
+                targets: successIconBox,
+                scale: [0.3, 1],
+                rotate: "1turn",
+                duration: 1000,
+                easing: "easeOutElastic(1, .6)",
+              });
 
-          // Reset form inputs
-          contactForm.reset();
+              // Reset form inputs
+              contactForm.reset();
+            })
+            .catch((error) => console.error("Error submitting form:", error));
         }
       });
 
