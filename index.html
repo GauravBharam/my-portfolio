@@ -653,7 +653,7 @@
       id="experience"
       class="py-24 border-t border-zinc-900 bg-zinc-950/20 px-6 relative overflow-hidden"
     >
-      <!-- Ambient background glows (Amber and Emerald accents, strictly avoiding purple) -->
+      <!-- Ambient background glows (Amber and Emerald accents) -->
       <div
         class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-solar/5 rounded-full blur-[120px] pointer-events-none glow-pulse-effect"
       ></div>
@@ -1651,7 +1651,7 @@
       id="about"
       class="py-24 px-6 max-w-7xl mx-auto relative overflow-hidden"
     >
-      <!-- Background glows (strictly Amber and Emerald, avoiding purple ban) -->
+      <!-- Background glows (strictly Amber and Emerald) -->
       <div
         class="absolute -top-24 -left-24 w-72 h-72 bg-solar/5 rounded-full blur-[100px] pointer-events-none glow-pulse-effect"
       ></div>
@@ -1806,6 +1806,360 @@
             >
               <span>Discuss Your Goals</span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATION & CREDENTIALS SECTION -->
+    <section
+      id="certification"
+      class="py-24 border-t border-zinc-900 bg-zinc-950/30 px-6 relative overflow-hidden"
+    >
+      <!-- Ambient background glows -->
+      <div
+        class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-solar/5 rounded-full blur-[120px] pointer-events-none glow-pulse-effect"
+      ></div>
+      <div
+        class="absolute -bottom-1/4 -left-1/4 w-96 h-96 bg-emerald/5 rounded-full blur-[120px] pointer-events-none glow-pulse-effect"
+        style="animation-delay: 2.5s"
+      ></div>
+
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="max-w-3xl mb-16">
+          <div
+            class="inline-flex items-center space-x-2 px-3 py-1 bg-zinc-900/50 border border-zinc-800 text-xs font-mono text-zinc-400 tracking-widest mb-6 rounded-xs opacity-0"
+            id="cert-badge"
+          >
+            <span
+              class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"
+            ></span>
+            <span>Verified Credentials &amp; Qualification</span>
+          </div>
+
+          <h2
+            class="text-display text-3xl sm:text-5xl font-black text-gradient tracking-tight leading-none opacity-0"
+            id="cert-title"
+          >
+            Diploma in User Interface &amp; <br />User Experience Designing (DUIUX)
+          </h2>
+
+          <p
+            class="mt-6 text-zinc-400 text-sm sm:text-base font-light leading-relaxed max-w-[65ch] opacity-0"
+            id="cert-subtitle"
+          >
+            Government-recognized credential awarded by Broadcast Engineering Consultants India Limited (BECIL) — A Government of India Enterprise under Ministry of Information &amp; Broadcasting. Validates structured expertise in UI/UX architecture, wireframing, high-converting layout geometry, and user research.
+          </p>
+        </div>
+
+        <!-- Asymmetric Credential Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <!-- Left Column: Certificate Interactive Frame (5 cols) -->
+          <div
+            class="lg:col-span-5 perspective-container opacity-0"
+            id="cert-visual"
+          >
+            <div
+              class="terminal-window rounded-xs overflow-hidden project-mockup transition-transform duration-500 group relative"
+            >
+              <!-- Terminal Header -->
+              <div
+                class="terminal-header px-4 py-3 flex items-center justify-between"
+              >
+                <div class="flex space-x-1.5">
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                  <span class="terminal-dot bg-zinc-800"></span>
+                </div>
+
+                <div
+                  class="text-[10px] font-mono text-zinc-500 tracking-wider flex items-center space-x-1.5"
+                >
+                  <span
+                    class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"
+                  ></span>
+                  <span>duiux-certificate.jpeg</span>
+                </div>
+
+                <span
+                  class="text-[9px] font-mono px-2 py-0.5 bg-emerald-950/50 text-emerald-400 border border-emerald-800/40 rounded-xs"
+                >
+                  Verified // 200 OK
+                </span>
+              </div>
+
+              <!-- Certificate Image Preview Container with Click-to-Zoom -->
+              <div
+                class="relative bg-[#09090b] p-3 border-t border-zinc-900 cursor-pointer overflow-hidden group"
+                onclick="openCertModal()"
+                role="button"
+                tabindex="0"
+                aria-label="Click to enlarge DUIUX Certificate"
+                onkeydown="if(event.key==='Enter'||event.key===' ')openCertModal()"
+              >
+                <div
+                  class="relative border border-zinc-800/80 rounded-xs overflow-hidden bg-black"
+                >
+                  <img
+                    src="assets/images/duiux-certificate.jpeg"
+                    alt="Diploma in User Interface & User Experience Designing (DUIUX) - Awarded to Gaurav Laxman Bharam"
+                    class="w-full h-auto object-cover block transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    id="cert-image-preview"
+                  />
+
+                  <!-- Dark gradient vignette overlay -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-transparent to-transparent pointer-events-none"
+                  ></div>
+
+                  <!-- Technical HUD Corner Markers -->
+                  <div
+                    class="absolute top-1.5 left-1.5 w-2 h-2 border-t border-l border-solar pointer-events-none"
+                  ></div>
+                  <div
+                    class="absolute top-1.5 right-1.5 w-2 h-2 border-t border-r border-solar pointer-events-none"
+                  ></div>
+                  <div
+                    class="absolute bottom-1.5 left-1.5 w-2 h-2 border-b border-l border-solar pointer-events-none"
+                  ></div>
+                  <div
+                    class="absolute bottom-1.5 right-1.5 w-2 h-2 border-b border-r border-solar pointer-events-none"
+                  ></div>
+                </div>
+
+                <!-- Hover inspect badge overlay -->
+                <div
+                  class="absolute inset-0 bg-obsidian/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none"
+                >
+                  <span
+                    class="px-4 py-2 bg-obsidian/95 border border-solar/60 text-solar text-xs font-mono font-bold rounded-xs flex items-center space-x-2 shadow-[0_0_25px_rgba(245,158,11,0.25)]"
+                  >
+                    <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                    <span>Click to Inspect High-Res</span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Visual Frame Bottom Info Strip -->
+              <div
+                class="px-4 py-2.5 bg-[#0e0e11] border-t border-zinc-900 flex items-center justify-between text-[10px] font-mono text-zinc-500"
+              >
+                <span>Serial: 103160</span>
+                <span>Reg: MH01-978</span>
+                <span class="text-emerald-400 font-bold">Grade: A+</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Credential Specs & Competencies Breakdown (7 cols) -->
+          <div
+            class="lg:col-span-7 space-y-6 opacity-0"
+            id="cert-details"
+          >
+            <!-- Authority & Distinction Card -->
+            <div class="obsidian-card p-6 sm:p-8">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+              >
+                <div class="flex items-center space-x-2">
+                  <span
+                    class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+                  ></span>
+                  <span
+                    class="text-xs font-mono text-emerald-400 font-bold tracking-wider uppercase"
+                    >Govt. of India Enterprise</span
+                  >
+                </div>
+
+                <span
+                  class="px-3 py-1 bg-solar/10 border border-solar/30 text-solar font-mono text-xs font-bold rounded-xs w-fit"
+                >
+                  Grade: A+ (Distinction / 80%+)
+                </span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-4">
+                Broadcast Engineering Consultants India Limited (BECIL)
+              </h3>
+
+              <p
+                class="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed mt-2.5 max-w-[65ch]"
+              >
+                Awarded under the Ministry of Information &amp; Broadcasting (A Mini Ratna Company). Program aligned with ISO 9001:2015 standard protocols and the Skill India initiative for advanced UI/UX system design.
+              </p>
+
+              <!-- Spec Grid -->
+              <div
+                class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-6 border-t border-zinc-900/80"
+              >
+                <div>
+                  <span
+                    class="text-[10px] font-mono text-zinc-500 tracking-wider block"
+                    >Certificate No.</span
+                  >
+                  <span class="text-xs font-mono font-bold text-white mt-1 block"
+                    >103160</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="text-[10px] font-mono text-zinc-500 tracking-wider block"
+                    >Registration</span
+                  >
+                  <span class="text-xs font-mono font-bold text-white mt-1 block"
+                    >MH01-978</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="text-[10px] font-mono text-zinc-500 tracking-wider block"
+                    >Duration</span
+                  >
+                  <span class="text-xs font-mono font-bold text-white mt-1 block"
+                    >Six Months</span
+                  >
+                </div>
+                <div>
+                  <span
+                    class="text-[10px] font-mono text-zinc-500 tracking-wider block"
+                    >Issue Date</span
+                  >
+                  <span class="text-xs font-mono font-bold text-white mt-1 block"
+                    >12-09-2022</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Curriculum Competencies Grid -->
+            <div class="obsidian-card p-6 sm:p-8">
+              <div
+                class="text-[10px] font-mono text-zinc-500 tracking-widest uppercase mb-4"
+              >
+                // Core Curriculum &amp; Specialized Competencies
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Skill 1 -->
+                <div
+                  class="p-3.5 bg-zinc-950/60 border border-zinc-900 rounded-xs"
+                >
+                  <div class="flex items-center space-x-2 text-zinc-200">
+                    <i
+                      data-lucide="brain-circuit"
+                      class="w-3.5 h-3.5 text-solar"
+                    ></i>
+                    <span class="font-mono text-xs font-bold text-white"
+                      >UX Research &amp; Psychology</span
+                    >
+                  </div>
+                  <p class="text-zinc-400 text-[11px] leading-relaxed mt-1.5">
+                    User mental models, cognitive load mapping, empathy pathways, and heuristic analysis.
+                  </p>
+                </div>
+
+                <!-- Skill 2 -->
+                <div
+                  class="p-3.5 bg-zinc-950/60 border border-zinc-900 rounded-xs"
+                >
+                  <div class="flex items-center space-x-2 text-zinc-200">
+                    <i
+                      data-lucide="layout-grid"
+                      class="w-3.5 h-3.5 text-solar"
+                    ></i>
+                    <span class="font-mono text-xs font-bold text-white"
+                      >Information Architecture</span
+                    >
+                  </div>
+                  <p class="text-zinc-400 text-[11px] leading-relaxed mt-1.5">
+                    Wireframing, typography scales, content hierarchy, and multi-device interface schematics.
+                  </p>
+                </div>
+
+                <!-- Skill 3 -->
+                <div
+                  class="p-3.5 bg-zinc-950/60 border border-zinc-900 rounded-xs"
+                >
+                  <div class="flex items-center space-x-2 text-zinc-200">
+                    <i data-lucide="figma" class="w-3.5 h-3.5 text-solar"></i>
+                    <span class="font-mono text-xs font-bold text-white"
+                      >Figma &amp; Design Systems</span
+                    >
+                  </div>
+                  <p class="text-zinc-400 text-[11px] leading-relaxed mt-1.5">
+                    Atomic components, token architectures, interactive prototypes, and developer handoffs.
+                  </p>
+                </div>
+
+                <!-- Skill 4 -->
+                <div
+                  class="p-3.5 bg-zinc-950/60 border border-zinc-900 rounded-xs"
+                >
+                  <div class="flex items-center space-x-2 text-zinc-200">
+                    <i
+                      data-lucide="trending-up"
+                      class="w-3.5 h-3.5 text-solar"
+                    ></i>
+                    <span class="font-mono text-xs font-bold text-white"
+                      >Conversion Rate UX</span
+                    >
+                  </div>
+                  <p class="text-zinc-400 text-[11px] leading-relaxed mt-1.5">
+                    Frictionless form flows, CTA visual anchors, and conversion-focused landing page principles.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Official Verification Callout Banner with Link -->
+            <div
+              class="p-5 bg-gradient-to-r from-zinc-950 via-[#0e0e12] to-zinc-950 border border-zinc-800/80 rounded-xs flex flex-col sm:flex-row items-center justify-between gap-4"
+            >
+              <div class="flex items-center space-x-3 w-full sm:w-auto">
+                <span
+                  class="w-10 h-10 rounded-xs bg-emerald-950/40 border border-emerald-800/30 text-emerald-400 flex items-center justify-center shrink-0"
+                >
+                  <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </span>
+                <div>
+                  <div class="text-xs font-bold text-white flex items-center space-x-2">
+                    <span>Live Verification Available</span>
+                    <span
+                      class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"
+                    ></span>
+                  </div>
+                  <p class="text-[11px] font-mono text-zinc-500 mt-0.5">
+                    BECIL Official Verification Portal • ID #103160
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 w-full sm:w-auto shrink-0"
+              >
+                <!-- Online Verification Link -->
+                <a
+                  class="w-full sm:w-auto px-5 py-2.5 bg-solar text-obsidian text-xs font-mono font-bold tracking-wider hover:bg-solar/95 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] transition-all duration-300 rounded-xs inline-flex items-center justify-center space-x-2"
+                  href="https://www.beciltraining.com/becil_verification/103160.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Verify Online</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </a>
+
+                <!-- Full Size Lightbox Button -->
+                <button
+                  type="button"
+                  onclick="openCertModal()"
+                  class="w-full sm:w-auto px-4 py-2.5 bg-transparent border border-zinc-800 text-zinc-300 hover:border-zinc-500 hover:text-white text-xs font-mono font-bold tracking-wider transition-all duration-300 rounded-xs inline-flex items-center justify-center space-x-2"
+                >
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-solar"></i>
+                  <span>Inspect Full Size</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2134,6 +2488,9 @@
           <a class="hover:text-zinc-100 transition-colors" href="#about"
             >About</a
           >
+          <a class="hover:text-zinc-100 transition-colors" href="#certification"
+            >Credentials</a
+          >
           <a class="hover:text-zinc-100 transition-colors" href="#projects"
             >Projects</a
           >
@@ -2146,6 +2503,74 @@
         </div>
       </div>
     </footer>
+
+    <!-- CERTIFICATE FULL RESOLUTION LIGHTBOX MODAL -->
+    <div
+      id="certModal"
+      class="fixed inset-0 z-50 bg-obsidian/90 backdrop-blur-md hidden items-center justify-center p-4 sm:p-6 transition-opacity duration-300 opacity-0"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cert-modal-title"
+    >
+      <div
+        class="relative max-w-4xl w-full max-h-[90vh] bg-[#0c0c0f] border border-zinc-800 rounded-xs overflow-hidden flex flex-col shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)]"
+      >
+        <!-- Modal Header -->
+        <div
+          class="px-5 py-3.5 bg-zinc-950 border-b border-zinc-900 flex items-center justify-between"
+        >
+          <div class="flex items-center space-x-3">
+            <span
+              class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+            ></span>
+            <span
+              id="cert-modal-title"
+              class="text-xs font-mono text-zinc-300 tracking-wider font-bold"
+            >
+              DUIUX Certificate • Gaurav Laxman Bharam (BECIL #103160)
+            </span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-mono text-solar hover:underline hidden sm:inline-flex items-center space-x-1"
+              href="https://www.beciltraining.com/becil_verification/103160.html"
+            >
+              <span>Verify Authenticity</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+            <button
+              type="button"
+              onclick="closeCertModal()"
+              class="text-zinc-400 hover:text-white p-1 rounded-xs hover:bg-zinc-900 transition-colors focus:outline-none"
+              aria-label="Close Certificate Preview"
+            >
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Body with Scrollable High-Res Image -->
+        <div
+          class="overflow-y-auto p-4 sm:p-6 flex justify-center bg-[#070709]"
+        >
+          <img
+            src="assets/images/duiux-certificate.jpeg"
+            alt="Government Certified Diploma in User Interface & User Experience Designing (DUIUX) - Gaurav Laxman Bharam"
+            class="max-w-full h-auto max-h-[75vh] object-contain border border-zinc-800/80 rounded-xs shadow-2xl"
+          />
+        </div>
+
+        <!-- Modal Footer -->
+        <div
+          class="px-5 py-3 bg-zinc-950 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-zinc-500"
+        >
+          <span>BECIL Training Division • Ministry of I&B, Govt. of India</span>
+          <span class="text-emerald-400 font-bold">Grade A+ • Distinction</span>
+        </div>
+      </div>
+    </div>
 
     <!-- =========================================
        SCRIPTS: LIBRARIES & MAIN ANIMATION PIPELINE
@@ -2738,6 +3163,58 @@
         },
       });
 
+      // Certification Section Reveals
+      gsap.to("#cert-badge", {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#certification",
+          start: "top 80%",
+        },
+      });
+      gsap.to("#cert-title", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#certification",
+          start: "top 78%",
+        },
+      });
+      gsap.to("#cert-subtitle", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#certification",
+          start: "top 75%",
+        },
+      });
+      gsap.to("#cert-visual", {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#certification",
+          start: "top 70%",
+        },
+      });
+      gsap.to("#cert-details", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "#certification",
+          start: "top 68%",
+        },
+      });
+
       // Experience & Expertise reveals
       gsap.to("#experience-badge", {
         opacity: 1,
@@ -2976,7 +3453,49 @@
         }
       });
 
-      // 10. GSAP animation cleanup handler (satisfies audit memory leaks check)
+      // 10. Certificate Modal Lightbox Controls
+      const certModal = document.getElementById("certModal");
+      function openCertModal() {
+        if (!certModal) return;
+        certModal.classList.remove("hidden");
+        certModal.classList.add("flex");
+        setTimeout(() => {
+          certModal.classList.remove("opacity-0");
+          certModal.classList.add("opacity-100");
+        }, 10);
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeCertModal() {
+        if (!certModal) return;
+        certModal.classList.remove("opacity-100");
+        certModal.classList.add("opacity-0");
+        setTimeout(() => {
+          certModal.classList.remove("flex");
+          certModal.classList.add("hidden");
+          document.body.style.overflow = "";
+        }, 300);
+      }
+
+      if (certModal) {
+        certModal.addEventListener("click", (e) => {
+          if (e.target === certModal) {
+            closeCertModal();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "Escape" &&
+          certModal &&
+          !certModal.classList.contains("hidden")
+        ) {
+          closeCertModal();
+        }
+      });
+
+      // 11. GSAP animation cleanup handler (satisfies audit memory leaks check)
       window.addEventListener("unload", () => {
         // Revert/kill GSAP timelines and ScrollTriggers
         ScrollTrigger.getAll().forEach((t) => t.kill());
@@ -2985,11 +3504,11 @@
     </script>
     <!-- Fixed WhatsApp Floating Action Button (Official Green with ripple rings) -->
     <a
+      id="whatsapp-float"
+      class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:bg-[#20ba5a] hover:scale-110 hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all duration-300 group"
       href="https://wa.me/917972432162"
       target="_blank"
-      class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:bg-[#20ba5a] hover:scale-110 hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] hover:-translate-y-1 transition-all duration-300 group"
       aria-label="Chat on WhatsApp"
-      id="whatsapp-float"
     >
       <!-- Pulsing ring animations -->
       <span
